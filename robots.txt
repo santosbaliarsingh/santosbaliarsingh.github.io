@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://your-username.github.io/faculty-website/sitemap.xml
