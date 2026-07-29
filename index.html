@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Santos Kumar Baliarsingh | Assistant Professor, School of Computer Engineering, KIIT Deemed to be University</title>
+<meta name="description" content="Faculty homepage of Dr. Santos Kumar Baliarsingh — Assistant Professor at KIIT, researching AI-generated text detection, large language models and natural language processing." />
+<meta name="keywords" content="AI-generated text detection, LLM, NLP, machine learning, deep learning, KIIT, faculty, research" />
+<meta name="author" content="Santos Kumar Baliarsingh" />
+<link rel="canonical" href="https://your-username.github.io/faculty-website/" />
+
+<!-- ================= Open Graph / Twitter Card (edit URLs before deploying) ================= -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dr. Santos Kumar Baliarsingh | Faculty, KIIT" />
+<meta property="og:description" content="Research homepage: AI-generated text detection, large language models, NLP and responsible AI." />
+<meta property="og:image" content="images/og-cover.jpg" />
+<meta property="og:url" content="https://your-username.github.io/faculty-website/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dr. Santos Kumar Baliarsingh | Faculty, KIIT" />
+<meta name="twitter:description" content="Research homepage: AI-generated text detection, large language models, NLP and responsible AI." />
+<meta name="twitter:image" content="images/og-cover.jpg" />
+
+<!-- ================= Favicon ================= -->
+<link rel="icon" href="favicon.ico" />
+
+<!-- ================= Fonts ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ================= Stylesheet ================= -->
+<style>
+/* ==========================================================================
+   FACULTY WEBSITE STYLESHEET
+   Organized by section. Uses CSS custom properties (variables) defined in
+   :root and [data-theme="dark"] for light/dark mode support.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES / THEME
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand colors */
+  --color-primary: #003366;
+  --color-secondary: #0056b3;
+  --color-accent: #1976d2;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f6f7fb;
+  --color-text: #222222;
+  --color-text-muted: #5a6270;
+  --color-border: #e3e7ee;
+  --color-card-bg: #ffffff;
+  --color-shadow: rgba(15, 35, 65, 0.08);
+  --color-shadow-strong: rgba(15, 35, 65, 0.16);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #f6f9ff 0%, #eef3fb 45%, #e8f0fb 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --nav-height: 72px;
+
+  /* Motion */
+  --transition-fast: 0.18s ease;
+  --transition-base: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0f1720;
+  --color-bg-alt: #161f2c;
+  --color-text: #e7ecf3;
+  --color-text-muted: #a3adbb;
+  --color-border: #263140;
+  --color-card-bg: #182230;
+  --color-shadow: rgba(0, 0, 0, 0.35);
+  --color-shadow-strong: rgba(0, 0, 0, 0.55);
+  --gradient-hero: linear-gradient(135deg, #101a26 0%, #0f1720 50%, #121b28 100%);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin: 0 0 var(--space-sm);
+}
+
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
+[data-theme="dark"] h4, [data-theme="dark"] h5 { color: #e7ecf3; }
+
+p { margin: 0 0 var(--space-sm); color: var(--color-text-muted); }
+
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+ul { padding-left: 1.2rem; }
+
+/* Visible keyboard focus everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  z-index: 2000;
+  border-radius: var(--radius-sm);
+}
+.skip-link:focus {
+  left: var(--space-sm);
+  top: var(--space-sm);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+section { padding: var(--space-2xl) 0; }
+.section-alt { background: var(--color-bg-alt); }
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin-bottom: var(--space-xs);
+}
+
+.section-subtitle {
+  max-width: 700px;
+  margin-bottom: var(--space-lg);
+}
+
+.section-header { margin-bottom: var(--space-lg); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+.btn-primary {
+  background: var(--gradient-accent);
+  color: #fff;
+  box-shadow: 0 8px 20px -6px var(--color-shadow-strong);
+}
+.btn-primary:hover { box-shadow: 0 12px 26px -6px var(--color-shadow-strong); }
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+[data-theme="dark"] .btn-outline { color: #e7ecf3; }
+.btn-outline:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.btn-sm { padding: 0.45rem 0.9rem; font-size: 0.82rem; }
+
+/* Cards (shared) */
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 20px -12px var(--color-shadow);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -14px var(--color-shadow-strong);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 100px;
+  background: rgba(25, 118, 210, 0.1);
+  color: var(--color-accent);
+}
+.badge-alt { background: rgba(0, 51, 102, 0.08); color: var(--color-primary); }
+[data-theme="dark"] .badge-alt { color: #9fc3ef; }
+
+.placeholder-note {
+  font-size: 0.75rem;
+  color: #b45309;
+  background: #fff7ed;
+  border: 1px dashed #f2c185;
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.7rem;
+  margin-top: 0.6rem;
+}
+[data-theme="dark"] .placeholder-note {
+  background: #2a2013; color: #f2c185; border-color: #4a3820;
+}
+
+/* --------------------------------------------------------------------------
+   3. NAVIGATION
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+}
+[data-theme="dark"] .nav-brand { color: #e7ecf3; }
+
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  font-size: 0.92rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.4rem 0.1rem;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--gradient-accent);
+  transition: width var(--transition-fast);
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover { text-decoration: none; color: var(--color-accent); }
+
+.nav-controls { display: flex; align-items: center; gap: 0.75rem; }
+
+.theme-toggle, .nav-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+.theme-toggle:hover, .nav-toggle:hover { border-color: var(--color-accent); }
+
+.nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md);
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base);
+  }
+  .nav-links.open { max-height: 80vh; overflow-y: auto; }
+  .nav-toggle { display: flex; }
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO
+   -------------------------------------------------------------------------- */
+.hero {
+  background: var(--gradient-hero);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.hero-name {
+  font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+  margin: 0.3rem 0 0.2rem;
+}
+
+.hero-role {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.hero-dept {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-typing {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  min-height: 1.6em;
+  margin-bottom: var(--space-sm);
+}
+[data-theme="dark"] .hero-typing { color: #9fc3ef; }
+.hero-typing .cursor { display: inline-block; width: 2px; background: var(--color-accent); margin-left: 2px; animation: blink 0.9s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-summary { max-width: 560px; font-size: 1.02rem; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: var(--space-md);
+}
+
+.hero-photo-wrap {
+  position: relative;
+  justify-self: center;
+}
+.hero-photo {
+  width: 320px;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: 0 24px 50px -20px var(--color-shadow-strong);
+  border: 6px solid var(--color-bg);
+}
+.hero-photo-ring {
+  position: absolute;
+  inset: -14px;
+  border-radius: calc(var(--radius-lg) + 10px);
+  border: 2px dashed var(--color-accent);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-summary { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-photo { width: 240px; height: 240px; }
+}
+
+/* --------------------------------------------------------------------------
+   5. ABOUT / STATS
+   -------------------------------------------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-xl);
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0;
+}
+.about-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.94rem;
+}
+.about-list li span:first-child { color: var(--color-text); font-weight: 600; }
+
+.keyword-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-sm); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-sm);
+}
+.stat-card {
+  padding: var(--space-md);
+  text-align: center;
+}
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: block;
+}
+[data-theme="dark"] .stat-number { color: #9fc3ef; }
+.stat-label { font-size: 0.8rem; color: var(--color-text-muted); }
+
+@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------------
+   6. RESEARCH CARDS
+   -------------------------------------------------------------------------- */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+.research-card { padding: var(--space-md); }
+.research-icon {
+  width: 52px; height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--gradient-accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+}
+.research-card h3 { font-size: 1.08rem; }
+.research-card img {
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-sm);
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: var(--color-bg-alt);
+}
+
+/* --------------------------------------------------------------------------
+   7. PUBLICATIONS
+   -------------------------------------------------------------------------- */
+.pub-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: var(--space-md);
+  align-items: center;
+}
+.pub-search {
+  flex: 1 1 240px;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+.filter-chip {
+  padding: 0.45rem 0.9rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.filter-chip.active, .filter-chip:hover {
+  background: var(--gradient-accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.pub-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+.pub-card {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.pub-top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.pub-title { font-size: 1.02rem; color: var(--color-primary); font-weight: 600; margin: 0; }
+[data-theme="dark"] .pub-title { color: #e7ecf3; }
+.pub-meta { font-size: 0.86rem; color: var(--color-text-muted); }
+.pub-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.pub-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.pub-actions a, .pub-actions button {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+.pub-actions a:hover, .pub-actions button:hover { border-color: var(--color-accent); color: var(--color-accent); text-decoration: none; }
+.pub-empty { text-align: center; padding: var(--space-lg); color: var(--color-text-muted); }
+
+/* --------------------------------------------------------------------------
+   8. PROJECTS
+   -------------------------------------------------------------------------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+.project-card { padding: var(--space-md); }
+.project-status {
+  float: right;
+}
+.project-details {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xs) 0;
+  font-size: 0.88rem;
+}
+.project-details li { display: flex; justify-content: space-between; padding: 0.25rem 0; border-bottom: 1px dashed var(--color-border); }
+.project-details li span:first-child { color: var(--color-text-muted); }
+.project-gallery { display: flex; gap: 0.4rem; margin-top: 0.6rem; }
+.project-gallery img { width: 100%; border-radius: var(--radius-sm); aspect-ratio: 4/3; object-fit: cover; background: var(--color-bg-alt); }
+
+/* --------------------------------------------------------------------------
+   9. TEACHING
+   -------------------------------------------------------------------------- */
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+.teaching-card { padding: var(--space-md); }
+.teaching-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.teaching-tabs { display: flex; gap: 0.5rem; margin-bottom: var(--space-md); }
+.teaching-tab {
+  padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border); background: transparent; cursor: pointer;
+  color: var(--color-text); font-family: var(--font-heading); font-size: 0.88rem;
+}
+.teaching-tab.active { background: var(--gradient-accent); color: #fff; border-color: transparent; }
+.teaching-panel { display: none; }
+.teaching-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
+
+/* --------------------------------------------------------------------------
+   10. STUDENTS
+   -------------------------------------------------------------------------- */
+.student-tabs { display: flex; gap: 0.5rem; margin-bottom: var(--space-md); flex-wrap: wrap; }
+.student-grid {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-md);
+}
+.student-grid.active { display: grid; }
+.student-card { padding: var(--space-md); text-align: left; }
+.student-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--gradient-accent);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   11. NEWS TIMELINE / AWARDS TIMELINE
+   -------------------------------------------------------------------------- */
+.timeline { position: relative; margin-left: 1rem; }
+.timeline::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px; background: var(--color-border);
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 var(--space-lg) 2rem;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.revealed { opacity: 1; transform: translateY(0); }
+.timeline-item::before {
+  content: "";
+  position: absolute; left: -6px; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--gradient-accent);
+  box-shadow: 0 0 0 4px var(--color-bg);
+}
+.timeline-date {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   12. PROFESSIONAL ACTIVITIES
+   -------------------------------------------------------------------------- */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+.activity-card { padding: var(--space-md); }
+.activity-card ul { margin: 0.4rem 0 0; padding-left: 1.1rem; font-size: 0.9rem; color: var(--color-text-muted); }
+
+/* --------------------------------------------------------------------------
+   13. GALLERY
+   -------------------------------------------------------------------------- */
+.gallery-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: var(--space-md); }
+.gallery-grid {
+  columns: 4 220px;
+  column-gap: var(--space-sm);
+}
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.gallery-item img { width: 100%; transition: transform var(--transition-base); background: var(--color-bg-alt); }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 0.5rem 0.7rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.65), transparent);
+  color: #fff; font-size: 0.78rem; margin: 0;
+}
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(5, 10, 20, 0.9);
+  display: none; align-items: center; justify-content: center;
+  padding: var(--space-md);
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 80vh; border-radius: var(--radius-sm); }
+.lightbox-close {
+  position: absolute; top: var(--space-md); right: var(--space-md);
+  background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer;
+}
+.lightbox-caption { color: #fff; text-align: center; margin-top: 0.6rem; }
+
+/* --------------------------------------------------------------------------
+   14. DOWNLOADS / RESOURCES
+   -------------------------------------------------------------------------- */
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+.download-card {
+  padding: var(--space-md);
+  text-align: center;
+}
+.download-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+
+/* --------------------------------------------------------------------------
+   15. CONTACT
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+.contact-info-list { list-style: none; padding: 0; }
+.contact-info-list li { display: flex; gap: 0.7rem; margin-bottom: var(--space-sm); }
+.contact-info-list .icon { color: var(--color-accent); }
+.contact-map {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  margin-top: var(--space-sm);
+}
+.contact-map iframe { width: 100%; height: 220px; border: 0; display: block; }
+.social-row { display: flex; gap: 0.7rem; margin-top: var(--space-sm); }
+.social-row a {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+[data-theme="dark"] .social-row a { color: #e7ecf3; }
+.social-row a:hover { border-color: var(--color-accent); color: var(--color-accent); text-decoration: none; }
+
+.form-group { margin-bottom: var(--space-sm); }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+.form-status { font-size: 0.85rem; margin-top: 0.5rem; min-height: 1.2em; }
+.form-status.success { color: #1a7f37; }
+
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------------
+   16. FOOTER
+   -------------------------------------------------------------------------- */
+footer {
+  background: var(--color-primary);
+  color: #cfe0f5;
+  padding: var(--space-xl) 0 var(--space-md);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.footer-grid h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.6rem; }
+.footer-grid ul { list-style: none; padding: 0; margin: 0; }
+.footer-grid a { color: #cfe0f5; font-size: 0.88rem; }
+.footer-grid a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: var(--space-md);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  font-size: 0.8rem; color: #9fbadd;
+}
+
+/* --------------------------------------------------------------------------
+   17. BACK TO TOP / MISC WIDGETS
+   -------------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 24px -8px var(--color-shadow-strong);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  z-index: 900;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* --------------------------------------------------------------------------
+   18. PRINT (CV-friendly)
+   -------------------------------------------------------------------------- */
+@media print {
+  .navbar, .back-to-top, .theme-toggle, .nav-toggle, .lightbox,
+  .hero-actions, footer, .gallery-filters, .pub-controls { display: none !important; }
+  section { padding: 1rem 0; }
+  body { color: #000; background: #fff; }
+}
+
+/* --------------------------------------------------------------------------
+   19. RESPONSIVE ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .gallery-grid { columns: 2 160px; }
+  section { padding: var(--space-xl) 0; }
+}
+
+</style>
+
+<!-- ================= Schema.org structured data (edit before deploying) ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Santos Panda",
+  "jobTitle": "Assistant Professor",
+  "worksFor": {
+    "@type": "CollegeOrUniversity",
+    "name": "Kalinga Institute of Industrial Technology (KIIT)"
+  },
+  "url": "https://your-username.github.io/faculty-website/",
+  "sameAs": [
+    "https://scholar.google.com/",
+    "https://orcid.org/",
+    "https://github.com/",
+    "https://www.linkedin.com/"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">Santos Panda</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#students">Students</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow"><!-- REPLACE: department --> School of Computer Engineering</span>
+        <h1 class="hero-name"><!-- REPLACE: full name and title -->Dr. Santos Panda</h1>
+        <p class="hero-role"><!-- REPLACE: current position -->Assistant Professor</p>
+        <p class="hero-dept"><!-- REPLACE: department / university -->Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar, India</p>
+        <div class="hero-typing">Researching <span id="typing-text">Artificial Intelligence</span><span class="cursor">&nbsp;</span></div>
+        <p class="hero-summary">
+          <!-- REPLACE: one-line research summary -->
+          I work on AI-generated text detection, large language models, and building
+          trustworthy NLP systems for academic and real-world settings.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="cv/cv-placeholder.pdf" download>⬇ Download CV</a>
+          <a class="btn btn-outline" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn btn-outline" href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+          <a class="btn btn-outline" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="mailto:name@university.edu">Email</a>
+        </div>
+        <p class="placeholder-note">Placeholder: replace name, title, department, links and photo with your own.</p>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring" aria-hidden="true"></div>
+        <img class="hero-photo" src="images/profile-placeholder.jpg" alt="Portrait of Dr. Santos Panda" width="320" height="320" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">About</span>
+        <h2 class="section-title">Biography &amp; Background</h2>
+        <p class="section-subtitle">A short overview of research focus, education and experience. Replace every line below with your own biography.</p>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <h3>Biography</h3>
+          <p><!-- REPLACE: 3–5 sentence professional biography -->
+            Dr. Santos Panda is an Assistant Professor working on natural language
+            processing and responsible AI. Their research addresses the detection of
+            AI-generated text, robustness of large language models, and the academic-integrity
+            implications of generative AI adoption. They have contributed to peer-reviewed
+            venues and collaborate with students on applied NLP projects.
+          </p>
+          <h3>Research Interests</h3>
+          <div class="keyword-list">
+            <span class="badge">AI-Generated Text Detection</span>
+            <span class="badge">Large Language Models</span>
+            <span class="badge">Natural Language Processing</span>
+            <span class="badge">Machine Learning</span>
+            <span class="badge">Deep Learning</span>
+            <span class="badge">Responsible AI</span>
+          </div>
+          <h3 style="margin-top: var(--space-md);">Education</h3>
+          <ul class="about-list">
+            <li><span>Ph.D., Computer Science <!-- REPLACE --></span><span>University Name, Year</span></li>
+            <li><span>M.Tech, Computer Science &amp; Engineering</span><span>University Name, Year</span></li>
+            <li><span>B.Tech, Computer Science &amp; Engineering</span><span>University Name, Year</span></li>
+          </ul>
+          <h3>Experience</h3>
+          <ul class="about-list">
+            <li><span>Assistant Professor, KIIT</span><span>Year – Present</span></li>
+            <li><span>Previous Position <!-- REPLACE --></span><span>Year – Year</span></li>
+          </ul>
+          <h3>Skills</h3>
+          <div class="keyword-list">
+            <span class="badge badge-alt">Python</span>
+            <span class="badge badge-alt">PyTorch</span>
+            <span class="badge badge-alt">Transformers</span>
+            <span class="badge badge-alt">LaTeX</span>
+            <span class="badge badge-alt">R</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <h3>Quick Stats</h3>
+          <div class="stats-grid">
+            <div class="card stat-card"><span class="stat-number" data-count="7">0</span><span class="stat-label">Years Experience</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="14">0</span><span class="stat-label">Journal Papers</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="21">0</span><span class="stat-label">Conference Papers</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="9">0</span><span class="stat-label">Projects</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="312">0</span><span class="stat-label">Citations</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="8">0</span><span class="stat-label">h-index</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="16">0</span><span class="stat-label">Students Guided</span></div>
+          </div>
+          <p class="placeholder-note">Placeholder numbers — replace data-count values with your real figures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH
+       ============================================================ -->
+  <section id="research" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Research</span>
+        <h2 class="section-title">Research Areas</h2>
+        <p class="section-subtitle">Core themes of my research programme. Swap in your own areas, icons and images.</p>
+      </div>
+      <div class="research-grid">
+        <div class="card research-card reveal">
+          <div class="research-icon">🤖</div>
+          <h3>Generative AI</h3>
+          <p>Studying capabilities and failure modes of generative models across text, code and multimodal domains.</p>
+          <img src="images/research-genai.jpg" alt="Illustration representing generative AI research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">📝</div>
+          <h3>AI-Generated Text Detection</h3>
+          <p>Building detectors and benchmarks that distinguish human- and machine-authored text under adversarial conditions.</p>
+          <img src="images/research-detection.jpg" alt="Illustration representing AI text detection research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">🧠</div>
+          <h3>Large Language Models</h3>
+          <p>Evaluating and fine-tuning LLMs (GPT-family, LLaMA, Mistral) for domain-specific reliability.</p>
+          <img src="images/research-llm.jpg" alt="Illustration representing large language model research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">💬</div>
+          <h3>Natural Language Processing</h3>
+          <p>Text classification, information extraction, and low-resource language processing.</p>
+          <img src="images/research-nlp.jpg" alt="Illustration representing NLP research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">📊</div>
+          <h3>Machine Learning</h3>
+          <p>Supervised and self-supervised methods applied to text and tabular data.</p>
+          <img src="images/research-ml.jpg" alt="Illustration representing machine learning research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">🧬</div>
+          <h3>Deep Learning</h3>
+          <p>Transformer architectures, representation learning, and efficient training methods.</p>
+          <img src="images/research-dl.jpg" alt="Illustration representing deep learning research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">👁️</div>
+          <h3>Computer Vision</h3>
+          <p>Applied vision projects in collaboration with students, including document and image forensics.</p>
+          <img src="images/research-cv.jpg" alt="Illustration representing computer vision research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">🛡️</div>
+          <h3>Responsible AI</h3>
+          <p>Fairness, transparency and academic-integrity implications of AI adoption.</p>
+          <img src="images/research-responsible.jpg" alt="Illustration representing responsible AI research" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PUBLICATIONS
+       ============================================================ -->
+  <section id="publications">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Publications</span>
+        <h2 class="section-title">Selected Publications</h2>
+        <p class="section-subtitle">Search or filter by type. Duplicate a .pub-card block in index.html to add a new entry.</p>
+      </div>
+
+      <div class="pub-controls reveal">
+        <input type="text" id="pub-search" class="pub-search" placeholder="Search publications by title, author or keyword…" aria-label="Search publications" />
+        <button class="filter-chip active" data-pub-filter="all">All</button>
+        <button class="filter-chip" data-pub-filter="journal">Journal</button>
+        <button class="filter-chip" data-pub-filter="conference">Conference</button>
+        <button class="filter-chip" data-pub-filter="book-chapter">Book Chapter</button>
+        <button class="filter-chip" data-pub-filter="patent">Patent</button>
+      </div>
+
+      <div class="pub-list">
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title"><!-- REPLACE -->Detecting AI-Generated Academic Text Using Stylometric and Transformer Features</h3>
+            <div class="pub-badges"><span class="badge">SCI</span><span class="badge badge-alt">2025</span></div>
+          </div>
+          <p class="pub-meta">Panda, S., Coauthor, A., Coauthor, B. — <em>Journal of Applied AI Research</em>, Vol. 12, 2025</p>
+          <div class="pub-actions">
+            <a href="publications/paper-placeholder-1.pdf">PDF</a>
+            <a href="https://doi.org/10.0000/example">DOI</a>
+            <a href="#">Code</a>
+            <button class="copy-bibtex" data-bibtex="@article{panda2025detecting, title={Detecting AI-Generated Academic Text}, author={Panda, Santos and others}, year={2025}}">BibTeX</button>
+            <button class="cite-btn" onclick="alert('Panda, S. et al. (2025). Detecting AI-Generated Academic Text. Journal of Applied AI Research, 12.')">Cite</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title"><!-- REPLACE -->Benchmarking LLM Robustness Against Paraphrase Attacks</h3>
+            <div class="pub-badges"><span class="badge">IEEE</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">Panda, S., Coauthor, C. — <em>Proceedings of the International Conference on NLP Systems</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/paper-placeholder-2.pdf">PDF</a>
+            <a href="https://doi.org/10.0000/example2">DOI</a>
+            <a href="#">Code</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{panda2024benchmarking, title={Benchmarking LLM Robustness}, author={Panda, Santos}, year={2024}}">BibTeX</button>
+            <button class="cite-btn" onclick="alert('Panda, S. (2024). Benchmarking LLM Robustness. ICNLP 2024.')">Cite</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title"><!-- REPLACE -->A Survey of Generative AI in Higher Education Assessment</h3>
+            <div class="pub-badges"><span class="badge">Springer</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">Panda, S. — <em>Springer Journal of Educational Technology</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/paper-placeholder-3.pdf">PDF</a>
+            <a href="https://doi.org/10.0000/example3">DOI</a>
+            <button class="copy-bibtex" data-bibtex="@article{panda2024survey, title={A Survey of Generative AI in Higher Education}, author={Panda, Santos}, year={2024}}">BibTeX</button>
+            <button class="cite-btn" onclick="alert('Panda, S. (2024). A Survey of Generative AI in Higher Education Assessment.')">Cite</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="book-chapter">
+          <div class="pub-top">
+            <h3 class="pub-title"><!-- REPLACE -->Responsible Deployment of LLMs in Academic Settings</h3>
+            <div class="pub-badges"><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">Panda, S. — in <em>Ethics of AI in Education</em> (Book Chapter), 2023</p>
+          <div class="pub-actions">
+            <a href="publications/paper-placeholder-4.pdf">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@incollection{panda2023responsible, title={Responsible Deployment of LLMs}, author={Panda, Santos}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="patent">
+          <div class="pub-top">
+            <h3 class="pub-title"><!-- REPLACE -->System and Method for Real-Time AI-Text Provenance Tagging</h3>
+            <div class="pub-badges"><span class="badge badge-alt">Filed 2023</span></div>
+          </div>
+          <p class="pub-meta">Panda, S., Coauthor, D. — Indian Patent Application, 2023</p>
+          <div class="pub-actions">
+            <a href="#">Details</a>
+            <button class="copy-bibtex" data-bibtex="@misc{panda2023patent, title={System for AI-Text Provenance Tagging}, author={Panda, Santos}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <p class="pub-empty" id="pub-empty" style="display:none;">No publications match your search or filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+       ============================================================ -->
+  <section id="projects" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Projects</span>
+        <h2 class="section-title">Funded &amp; Ongoing Projects</h2>
+        <p class="section-subtitle">Duplicate a .project-card block to add another project.</p>
+      </div>
+      <div class="project-grid">
+        <div class="card project-card reveal">
+          <span class="badge project-status">Ongoing</span>
+          <h3><!-- REPLACE -->Detection Framework for AI-Generated Academic Submissions</h3>
+          <p>Building an open benchmark and detector suite for AI-generated text in student submissions.</p>
+          <ul class="project-details">
+            <li><span>Funding Agency</span><span>Institution Seed Grant</span></li>
+            <li><span>Budget</span><span>₹ [amount]</span></li>
+            <li><span>Duration</span><span>2024 – 2026</span></li>
+            <li><span>Role</span><span>Principal Investigator</span></li>
+            <li><span>Collaborators</span><span>Dept. of CSE, KIIT</span></li>
+          </ul>
+          <div class="project-gallery">
+            <img src="images/project-1a.jpg" alt="Project photo 1" loading="lazy" />
+            <img src="images/project-1b.jpg" alt="Project photo 2" loading="lazy" />
+          </div>
+        </div>
+        <div class="card project-card reveal">
+          <span class="badge badge-alt project-status">Completed</span>
+          <h3><!-- REPLACE -->Low-Resource NLP Toolkit for Regional Languages</h3>
+          <p>Developed preprocessing and classification tools for under-resourced Indian languages.</p>
+          <ul class="project-details">
+            <li><span>Funding Agency</span><span>[Agency Name]</span></li>
+            <li><span>Budget</span><span>₹ [amount]</span></li>
+            <li><span>Duration</span><span>2021 – 2023</span></li>
+            <li><span>Role</span><span>Co-Investigator</span></li>
+            <li><span>Collaborators</span><span>[Partner Institution]</span></li>
+          </ul>
+          <div class="project-gallery">
+            <img src="images/project-2a.jpg" alt="Project photo 1" loading="lazy" />
+            <img src="images/project-2b.jpg" alt="Project photo 2" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TEACHING
+       ============================================================ -->
+  <section id="teaching">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Teaching</span>
+        <h2 class="section-title">Courses</h2>
+        <p class="section-subtitle">Switch between current and previous semesters.</p>
+      </div>
+      <div class="teaching-tabs reveal">
+        <button class="teaching-tab active" data-panel="teaching-current">Current</button>
+        <button class="teaching-tab" data-panel="teaching-previous">Previous</button>
+      </div>
+
+      <div class="teaching-panel active" id="teaching-current">
+        <div class="card teaching-card reveal">
+          <span class="badge">Semester: Autumn 2026</span>
+          <h3><!-- REPLACE -->Natural Language Processing</h3>
+          <p>Level: B.Tech, 6th Semester</p>
+          <p>Covers text preprocessing, classical NLP pipelines, and transformer-based models.</p>
+          <div class="teaching-links">
+            <a class="btn btn-sm btn-outline" href="#">Slides</a>
+            <a class="btn btn-sm btn-outline" href="#">Assignments</a>
+            <a class="btn btn-sm btn-outline" href="#">Labs</a>
+            <a class="btn btn-sm btn-outline" href="#">Question Bank</a>
+          </div>
+        </div>
+        <div class="card teaching-card reveal">
+          <span class="badge">Semester: Autumn 2026</span>
+          <h3><!-- REPLACE -->Foundations of Machine Learning</h3>
+          <p>Level: B.Tech, 4th Semester</p>
+          <p>Regression, classification, model evaluation, and an introduction to neural networks.</p>
+          <div class="teaching-links">
+            <a class="btn btn-sm btn-outline" href="#">Slides</a>
+            <a class="btn btn-sm btn-outline" href="#">Assignments</a>
+            <a class="btn btn-sm btn-outline" href="#">Resources</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="teaching-panel" id="teaching-previous">
+        <div class="card teaching-card reveal">
+          <span class="badge badge-alt">Semester: Spring 2024</span>
+          <h3><!-- REPLACE -->Deep Learning for NLP</h3>
+          <p>Level: M.Tech</p>
+          <p>Sequence models, attention mechanisms, and fine-tuning pretrained language models.</p>
+          <div class="teaching-links">
+            <a class="btn btn-sm btn-outline" href="#">Slides Archive</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STUDENTS
+       ============================================================ -->
+  <section id="students" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Students</span>
+        <h2 class="section-title">Students Guided</h2>
+        <p class="section-subtitle">Filter by degree level.</p>
+      </div>
+      <div class="student-tabs reveal">
+        <button class="student-tab active" data-panel="students-phd">PhD</button>
+        <button class="student-tab" data-panel="students-mtech">MTech</button>
+        <button class="student-tab" data-panel="students-btech">BTech</button>
+      </div>
+
+      <div class="student-grid active" id="students-phd">
+        <div class="card student-card reveal">
+          <div class="student-avatar">AR</div>
+          <h3><!-- REPLACE -->Student Name</h3>
+          <p><span class="badge">Ongoing</span> — Research area: AI-generated text detection</p>
+          <p>Since 2023</p>
+        </div>
+      </div>
+      <div class="student-grid" id="students-mtech">
+        <div class="card student-card reveal">
+          <div class="student-avatar">PK</div>
+          <h3><!-- REPLACE -->Student Name</h3>
+          <p><span class="badge badge-alt">Completed</span> — Research area: NLP for regional languages</p>
+          <p>2022 – 2024</p>
+        </div>
+      </div>
+      <div class="student-grid" id="students-btech">
+        <div class="card student-card reveal">
+          <div class="student-avatar">SM</div>
+          <h3><!-- REPLACE -->Student Name</h3>
+          <p><span class="badge badge-alt">Completed</span> — Research area: Text classification</p>
+          <p>2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AWARDS
+       ============================================================ -->
+  <section id="awards">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Awards</span>
+        <h2 class="section-title">Awards &amp; Honors</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2025</span>
+          <h3>🏆 <!-- REPLACE -->Best Paper Award, International Conference on NLP Systems</h3>
+          <p>Awarded for research on detecting AI-generated academic text.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2023</span>
+          <h3>🎖️ <!-- REPLACE -->Young Researcher Award, KIIT</h3>
+          <p>Recognized for contributions to NLP research and mentoring.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2021</span>
+          <h3>📜 <!-- REPLACE -->Certificate of Excellence in Teaching</h3>
+          <p>Awarded for outstanding student feedback in core CS courses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROFESSIONAL ACTIVITIES
+       ============================================================ -->
+  <section id="activities" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Service</span>
+        <h2 class="section-title">Professional Activities</h2>
+      </div>
+      <div class="activity-grid">
+        <div class="card activity-card reveal">
+          <h3>Journal Reviewer</h3>
+          <ul>
+            <li><!-- REPLACE -->Journal of Applied AI Research</li>
+            <li>IEEE Transactions on NLP</li>
+          </ul>
+        </div>
+        <div class="card activity-card reveal">
+          <h3>TPC Member / Session Chair</h3>
+          <ul>
+            <li><!-- REPLACE -->ICNLP 2024 — Technical Programme Committee</li>
+            <li>NLP Systems Workshop 2023 — Session Chair</li>
+          </ul>
+        </div>
+        <div class="card activity-card reveal">
+          <h3>Invited Talks &amp; Workshops</h3>
+          <ul>
+            <li><!-- REPLACE -->"Detecting AI-Generated Text" — Invited talk, University X, 2025</li>
+            <li>Faculty Development Programme on Generative AI, 2024</li>
+          </ul>
+        </div>
+        <div class="card activity-card reveal">
+          <h3>Editorial Board</h3>
+          <ul>
+            <li><!-- REPLACE -->Editorial Board Member, Journal of Educational NLP</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY
+       ============================================================ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Gallery</span>
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-subtitle">Filter by category and click any photo to enlarge it.</p>
+      </div>
+      <div class="gallery-filters reveal">
+        <button class="filter-chip active" data-gallery-filter="all">All</button>
+        <button class="filter-chip" data-gallery-filter="research">Research</button>
+        <button class="filter-chip" data-gallery-filter="teaching">Teaching</button>
+        <button class="filter-chip" data-gallery-filter="conference">Conference</button>
+        <button class="filter-chip" data-gallery-filter="events">Events</button>
+        <button class="filter-chip" data-gallery-filter="lab">Lab</button>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure class="gallery-item" data-category="research"><img src="images/gallery-1.jpg" alt="Research group meeting" loading="lazy" /><figcaption>Research group meeting, 2025</figcaption></figure>
+        <figure class="gallery-item" data-category="teaching"><img src="images/gallery-2.jpg" alt="Lecturing in NLP course" loading="lazy" /><figcaption>NLP lecture, Autumn 2025</figcaption></figure>
+        <figure class="gallery-item" data-category="conference"><img src="images/gallery-3.jpg" alt="Presenting at conference" loading="lazy" /><figcaption>Presenting at ICNLP 2024</figcaption></figure>
+        <figure class="gallery-item" data-category="events"><img src="images/gallery-4.jpg" alt="Department event" loading="lazy" /><figcaption>Department annual event</figcaption></figure>
+        <figure class="gallery-item" data-category="lab"><img src="images/gallery-5.jpg" alt="In the research lab" loading="lazy" /><figcaption>NLP research lab</figcaption></figure>
+        <figure class="gallery-item" data-category="research"><img src="images/gallery-6.jpg" alt="Discussing results with students" loading="lazy" /><figcaption>Reviewing results with students</figcaption></figure>
+      </div>
+      <p class="placeholder-note">Placeholder images — replace files in /images with your own photos (keep the same filenames or update the src attributes).</p>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+    <div>
+      <img id="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NEWS
+       ============================================================ -->
+  <section id="news" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">News</span>
+        <h2 class="section-title">Latest Updates</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-date">June 2026</span>
+          <h3><!-- REPLACE -->Paper accepted at ICNLP 2026</h3>
+          <p>Our work on paraphrase-robust AI-text detection was accepted for publication.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">March 2026</span>
+          <h3><!-- REPLACE -->Invited talk at University X</h3>
+          <p>Delivered a talk on responsible use of generative AI in higher education.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">January 2026</span>
+          <h3><!-- REPLACE -->New seed grant awarded</h3>
+          <p>Received institutional funding to extend the AI-text detection benchmark.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESOURCES / DOWNLOADS
+       ============================================================ -->
+  <section id="resources">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Resources</span>
+        <h2 class="section-title">Downloads</h2>
+        <p class="section-subtitle">Replace these placeholder files in /cv and /publications with your own documents.</p>
+      </div>
+      <div class="downloads-grid">
+        <div class="card download-card reveal">
+          <div class="download-icon">📄</div>
+          <h3>CV</h3>
+          <a class="btn btn-sm btn-outline" href="cv/cv-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">📚</div>
+          <h3>Publication List</h3>
+          <a class="btn btn-sm btn-outline" href="publications/" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🧭</div>
+          <h3>Research Statement</h3>
+          <a class="btn btn-sm btn-outline" href="cv/research-statement-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🧑‍🏫</div>
+          <h3>Teaching Statement</h3>
+          <a class="btn btn-sm btn-outline" href="cv/teaching-statement-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🖥️</div>
+          <h3>Slides</h3>
+          <a class="btn btn-sm btn-outline" href="publications/slides-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🗂️</div>
+          <h3>Datasets</h3>
+          <a class="btn btn-sm btn-outline" href="publications/" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section id="contact" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <ul class="contact-info-list">
+            <li><span class="icon">📍</span><span><!-- REPLACE -->School of Computer Engineering, KIIT, Bhubaneswar, Odisha, India</span></li>
+            <li><span class="icon">✉️</span><span><a href="mailto:name@university.edu">name@university.edu</a></span></li>
+            <li><span class="icon">📞</span><span>+91 00000 00000</span></li>
+          </ul>
+          <div class="social-row">
+            <a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="Google Scholar">🎓</a>
+            <a href="https://orcid.org/" target="_blank" rel="noopener" aria-label="ORCID">🆔</a>
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">💻</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">🔗</a>
+            <a href="mailto:name@university.edu" aria-label="Email">📧</a>
+          </div>
+          <div class="contact-map">
+            <iframe title="Campus location map" loading="lazy" src="https://www.google.com/maps?q=KIIT%20Bhubaneswar&output=embed"></iframe>
+          </div>
+        </div>
+        <div class="reveal">
+          <form id="contact-form" class="card" style="padding: var(--space-md);">
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-status" id="form-status"></p>
+            <p class="placeholder-note">Frontend-only form. Connect to Formspree, Getform or EmailJS for real delivery — see script.js.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Santos Panda</h4>
+        <p style="color:#cfe0f5; font-size:0.85rem;">Assistant Professor, KIIT — AI-generated text detection, NLP, LLMs.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="cv/cv-placeholder.pdf">CV</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <p style="font-size:0.85rem;">Visitors: <span id="visitor-count">—</span></p>
+        <p style="font-size:0.85rem;">Last updated: <span id="footer-updated">July 2026</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="current-year"></span> Santos Panda. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; vanilla JavaScript.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script>
+/* ==========================================================================
+   FACULTY WEBSITE SCRIPT
+   Vanilla JS only. Each feature is self-contained; delete a block if you
+   don't need that feature. All selectors match index.html — if you rename
+   an id/class in the HTML, update it here too.
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ------------------------------------------------------------------
+     0. YEAR STAMP + LAST UPDATED (footer)
+     ------------------------------------------------------------------ */
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ------------------------------------------------------------------
+     1. MOBILE NAV TOGGLE
+     ------------------------------------------------------------------ */
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     2. ACTIVE NAV LINK ON SCROLL
+     ------------------------------------------------------------------ */
+  const sections = document.querySelectorAll('main section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+  const setActiveLink = () => {
+    let currentId = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 90;
+      if (window.scrollY >= top) currentId = sec.id;
+    });
+    navAnchors.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${currentId}`);
+    });
+  };
+  window.addEventListener('scroll', setActiveLink, { passive: true });
+  setActiveLink();
+
+  /* ------------------------------------------------------------------
+     3. DARK MODE TOGGLE (persists for the session via a JS variable;
+        localStorage avoided intentionally for artifact-safe portability
+        — on a real GitHub Pages deployment you may re-enable localStorage)
+     ------------------------------------------------------------------ */
+  const themeToggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+  let storedTheme = null;
+  try { storedTheme = localStorage.getItem('faculty-site-theme'); } catch (e) { /* storage unavailable */ }
+  if (storedTheme === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+    if (themeToggle) themeToggle.textContent = '☀️';
+  }
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        themeToggle.textContent = '🌙';
+        try { localStorage.setItem('faculty-site-theme', 'light'); } catch (e) {}
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '☀️';
+        try { localStorage.setItem('faculty-site-theme', 'dark'); } catch (e) {}
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     4. TYPING EFFECT (hero)
+     ------------------------------------------------------------------ */
+  const typingEl = document.getElementById('typing-text');
+  const typingWords = [
+    'Artificial Intelligence',
+    'Machine Learning',
+    'Deep Learning',
+    'Natural Language Processing',
+    'Generative AI'
+  ];
+  if (typingEl) {
+    let wordIndex = 0, charIndex = 0, deleting = false;
+    const type = () => {
+      const word = typingWords[wordIndex];
+      if (!deleting) {
+        charIndex++;
+        typingEl.textContent = word.slice(0, charIndex);
+        if (charIndex === word.length) {
+          deleting = true;
+          setTimeout(type, 1400);
+          return;
+        }
+      } else {
+        charIndex--;
+        typingEl.textContent = word.slice(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % typingWords.length;
+        }
+      }
+      setTimeout(type, deleting ? 45 : 85);
+    };
+    type();
+  }
+
+  /* ------------------------------------------------------------------
+     5. SCROLL REVEAL (IntersectionObserver)
+     ------------------------------------------------------------------ */
+  const revealEls = document.querySelectorAll('.reveal, .timeline-item');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('revealed'));
+  }
+
+  /* ------------------------------------------------------------------
+     6. ANIMATED COUNTERS (stats section)
+     ------------------------------------------------------------------ */
+  const counters = document.querySelectorAll('.stat-number[data-count]');
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    const duration = 1400;
+    const startTime = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString() + (el.getAttribute('data-suffix') || '');
+    };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window && counters.length) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          cio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => cio.observe(c));
+  }
+
+  /* ------------------------------------------------------------------
+     7. BACK TO TOP BUTTON
+     ------------------------------------------------------------------ */
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 480);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     8. PUBLICATIONS: SEARCH + FILTER
+     ------------------------------------------------------------------ */
+  const pubSearch = document.getElementById('pub-search');
+  const pubChips = document.querySelectorAll('.filter-chip[data-pub-filter]');
+  const pubCards = document.querySelectorAll('.pub-card');
+  const pubEmpty = document.getElementById('pub-empty');
+  let activePubFilter = 'all';
+
+  const applyPubFilters = () => {
+    const query = (pubSearch ? pubSearch.value : '').trim().toLowerCase();
+    let visibleCount = 0;
+    pubCards.forEach(card => {
+      const type = card.getAttribute('data-type');
+      const text = card.textContent.toLowerCase();
+      const matchesFilter = activePubFilter === 'all' || type === activePubFilter;
+      const matchesSearch = !query || text.includes(query);
+      const show = matchesFilter && matchesSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    if (pubEmpty) pubEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+  };
+
+  pubChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      pubChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activePubFilter = chip.getAttribute('data-pub-filter');
+      applyPubFilters();
+    });
+  });
+  if (pubSearch) pubSearch.addEventListener('input', applyPubFilters);
+
+  /* Copy BibTeX to clipboard */
+  document.querySelectorAll('.copy-bibtex').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bibtex = btn.getAttribute('data-bibtex') || '';
+      navigator.clipboard?.writeText(bibtex).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 1500);
+      }).catch(() => { alert('Copy this BibTeX:\n\n' + bibtex); });
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     9. TEACHING TABS (Current / Previous)
+     ------------------------------------------------------------------ */
+  const teachingTabs = document.querySelectorAll('.teaching-tab');
+  const teachingPanels = document.querySelectorAll('.teaching-panel');
+  teachingTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      teachingTabs.forEach(t => t.classList.remove('active'));
+      teachingPanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-panel')).classList.add('active');
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     10. STUDENT TABS (PhD / MTech / BTech)
+     ------------------------------------------------------------------ */
+  const studentTabs = document.querySelectorAll('.student-tab');
+  const studentGrids = document.querySelectorAll('.student-grid');
+  studentTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      studentTabs.forEach(t => t.classList.remove('active'));
+      studentGrids.forEach(g => g.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-panel')).classList.add('active');
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     11. GALLERY FILTER + LIGHTBOX
+     ------------------------------------------------------------------ */
+  const galleryChips = document.querySelectorAll('.filter-chip[data-gallery-filter]');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  galleryChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      galleryChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.getAttribute('data-gallery-filter');
+      galleryItems.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      if (!lightbox || !img) return;
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = img.alt || '';
+      lightbox.classList.add('open');
+    });
+  });
+  if (lightboxClose) lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('open');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     12. CONTACT FORM (frontend only — no backend)
+     ------------------------------------------------------------------ */
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = contactForm.querySelector('#cf-name').value.trim();
+      const email = contactForm.querySelector('#cf-email').value.trim();
+      const message = contactForm.querySelector('#cf-message').value.trim();
+      if (!name || !email || !message) {
+        formStatus.textContent = 'Please fill in every field before sending.';
+        formStatus.classList.remove('success');
+        return;
+      }
+      /* NOTE: This form has no backend. To make it functional, connect it
+         to a service such as Formspree, Getform, or EmailJS, and replace
+         this block with the corresponding submit call. */
+      formStatus.textContent = `Thanks, ${name}! This is a demo form — connect it to Formspree/EmailJS to receive messages.`;
+      formStatus.classList.add('success');
+      contactForm.reset();
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     13. VISITOR COUNTER PLACEHOLDER
+     ------------------------------------------------------------------ */
+  const visitorCountEl = document.getElementById('visitor-count');
+  if (visitorCountEl) {
+    /* Replace with a real counter service (e.g. goatcounter.com,
+       visitor-badge.laobi.icu) for a live count on GitHub Pages. */
+    let count = 0;
+    try {
+      count = parseInt(localStorage.getItem('faculty-site-visits') || '0', 10) + 1;
+      localStorage.setItem('faculty-site-visits', String(count));
+    } catch (e) { count = '—'; }
+    visitorCountEl.textContent = count;
+  }
+
+});
+
+</script>
+</body>
+</html>
