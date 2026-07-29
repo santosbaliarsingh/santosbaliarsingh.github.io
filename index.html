@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Santos Ku. Baliarsingh | Faculty, School of Computer Engineering, KIIT</title>
+<meta name="description" content="Faculty homepage of Dr. Santos Ku. Baliarsingh — Assistant Professor at KIIT Deemed to be University, researching AI-generated text detection, video anomaly detection, machine learning and healthcare AI." />
+<meta name="keywords" content="AI-generated text detection, video anomaly detection, machine learning, deep learning, bioinformatics, healthcare AI, KIIT, faculty, research" />
+<meta name="author" content="Santos Ku. Baliarsingh" />
+<link rel="canonical" href="https://your-username.github.io/faculty-website/" />
+
+<!-- ================= Open Graph / Twitter Card (edit URLs before deploying) ================= -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dr. Santos Ku. Baliarsingh | Faculty, KIIT" />
+<meta property="og:description" content="Research homepage: AI-generated text detection, video anomaly detection, machine learning and healthcare AI." />
+<meta property="og:image" content="images/og-cover.jpg" />
+<meta property="og:url" content="https://your-username.github.io/faculty-website/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dr. Santos Ku. Baliarsingh | Faculty, KIIT" />
+<meta name="twitter:description" content="Research homepage: AI-generated text detection, video anomaly detection, machine learning and healthcare AI." />
+<meta name="twitter:image" content="images/og-cover.jpg" />
+
+<!-- ================= Favicon ================= -->
+<link rel="icon" href="favicon.ico" />
+
+<!-- ================= Fonts ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ================= Stylesheet ================= -->
+<style>
+/* ==========================================================================
+   FACULTY WEBSITE STYLESHEET
+   Organized by section. Uses CSS custom properties (variables) defined in
+   :root and [data-theme="dark"] for light/dark mode support.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES / THEME
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand colors */
+  --color-primary: #003366;
+  --color-secondary: #0056b3;
+  --color-accent: #1976d2;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f6f7fb;
+  --color-text: #222222;
+  --color-text-muted: #5a6270;
+  --color-border: #e3e7ee;
+  --color-card-bg: #ffffff;
+  --color-shadow: rgba(15, 35, 65, 0.08);
+  --color-shadow-strong: rgba(15, 35, 65, 0.16);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #f6f9ff 0%, #eef3fb 45%, #e8f0fb 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --nav-height: 72px;
+
+  /* Motion */
+  --transition-fast: 0.18s ease;
+  --transition-base: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0f1720;
+  --color-bg-alt: #161f2c;
+  --color-text: #e7ecf3;
+  --color-text-muted: #a3adbb;
+  --color-border: #263140;
+  --color-card-bg: #182230;
+  --color-shadow: rgba(0, 0, 0, 0.35);
+  --color-shadow-strong: rgba(0, 0, 0, 0.55);
+  --gradient-hero: linear-gradient(135deg, #101a26 0%, #0f1720 50%, #121b28 100%);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin: 0 0 var(--space-sm);
+}
+
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
+[data-theme="dark"] h4, [data-theme="dark"] h5 { color: #e7ecf3; }
+
+p { margin: 0 0 var(--space-sm); color: var(--color-text-muted); }
+
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+ul { padding-left: 1.2rem; }
+
+/* Visible keyboard focus everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  z-index: 2000;
+  border-radius: var(--radius-sm);
+}
+.skip-link:focus {
+  left: var(--space-sm);
+  top: var(--space-sm);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+section { padding: var(--space-2xl) 0; }
+.section-alt { background: var(--color-bg-alt); }
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin-bottom: var(--space-xs);
+}
+
+.section-subtitle {
+  max-width: 700px;
+  margin-bottom: var(--space-lg);
+}
+
+.section-header { margin-bottom: var(--space-lg); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+.btn-primary {
+  background: var(--gradient-accent);
+  color: #fff;
+  box-shadow: 0 8px 20px -6px var(--color-shadow-strong);
+}
+.btn-primary:hover { box-shadow: 0 12px 26px -6px var(--color-shadow-strong); }
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+[data-theme="dark"] .btn-outline { color: #e7ecf3; }
+.btn-outline:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.btn-sm { padding: 0.45rem 0.9rem; font-size: 0.82rem; }
+
+/* Cards (shared) */
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 20px -12px var(--color-shadow);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -14px var(--color-shadow-strong);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 100px;
+  background: rgba(25, 118, 210, 0.1);
+  color: var(--color-accent);
+}
+.badge-alt { background: rgba(0, 51, 102, 0.08); color: var(--color-primary); }
+[data-theme="dark"] .badge-alt { color: #9fc3ef; }
+
+.placeholder-note {
+  font-size: 0.75rem;
+  color: #b45309;
+  background: #fff7ed;
+  border: 1px dashed #f2c185;
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.7rem;
+  margin-top: 0.6rem;
+}
+[data-theme="dark"] .placeholder-note {
+  background: #2a2013; color: #f2c185; border-color: #4a3820;
+}
+
+/* --------------------------------------------------------------------------
+   3. NAVIGATION
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+}
+[data-theme="dark"] .nav-brand { color: #e7ecf3; }
+
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  font-size: 0.92rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.4rem 0.1rem;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--gradient-accent);
+  transition: width var(--transition-fast);
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover { text-decoration: none; color: var(--color-accent); }
+
+.nav-controls { display: flex; align-items: center; gap: 0.75rem; }
+
+.theme-toggle, .nav-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+.theme-toggle:hover, .nav-toggle:hover { border-color: var(--color-accent); }
+
+.nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md);
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base);
+  }
+  .nav-links.open { max-height: 80vh; overflow-y: auto; }
+  .nav-toggle { display: flex; }
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO
+   -------------------------------------------------------------------------- */
+.hero {
+  background: var(--gradient-hero);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.hero-name {
+  font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+  margin: 0.3rem 0 0.2rem;
+}
+
+.hero-role {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.hero-dept {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-typing {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  min-height: 1.6em;
+  margin-bottom: var(--space-sm);
+}
+[data-theme="dark"] .hero-typing { color: #9fc3ef; }
+.hero-typing .cursor { display: inline-block; width: 2px; background: var(--color-accent); margin-left: 2px; animation: blink 0.9s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-summary { max-width: 560px; font-size: 1.02rem; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: var(--space-md);
+}
+
+.hero-photo-wrap {
+  position: relative;
+  justify-self: center;
+}
+.hero-photo {
+  width: 320px;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: 0 24px 50px -20px var(--color-shadow-strong);
+  border: 6px solid var(--color-bg);
+}
+.hero-photo-ring {
+  position: absolute;
+  inset: -14px;
+  border-radius: calc(var(--radius-lg) + 10px);
+  border: 2px dashed var(--color-accent);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-summary { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-photo { width: 240px; height: 240px; }
+}
+
+/* --------------------------------------------------------------------------
+   5. ABOUT / STATS
+   -------------------------------------------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-xl);
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0;
+}
+.about-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.94rem;
+}
+.about-list li span:first-child { color: var(--color-text); font-weight: 600; }
+
+.keyword-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-sm); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-sm);
+}
+.stat-card {
+  padding: var(--space-md);
+  text-align: center;
+}
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: block;
+}
+[data-theme="dark"] .stat-number { color: #9fc3ef; }
+.stat-label { font-size: 0.8rem; color: var(--color-text-muted); }
+
+@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------------
+   6. RESEARCH CARDS
+   -------------------------------------------------------------------------- */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+.research-card { padding: var(--space-md); }
+.research-icon {
+  width: 52px; height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--gradient-accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+}
+.research-card h3 { font-size: 1.08rem; }
+.research-card img {
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-sm);
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: var(--color-bg-alt);
+}
+
+/* --------------------------------------------------------------------------
+   7. PUBLICATIONS
+   -------------------------------------------------------------------------- */
+.pub-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: var(--space-md);
+  align-items: center;
+}
+.pub-search {
+  flex: 1 1 240px;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+.filter-chip {
+  padding: 0.45rem 0.9rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.filter-chip.active, .filter-chip:hover {
+  background: var(--gradient-accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.pub-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+.pub-card {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.pub-top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.pub-title { font-size: 1.02rem; color: var(--color-primary); font-weight: 600; margin: 0; }
+[data-theme="dark"] .pub-title { color: #e7ecf3; }
+.pub-meta { font-size: 0.86rem; color: var(--color-text-muted); }
+.pub-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.pub-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.pub-actions a, .pub-actions button {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+.pub-actions a:hover, .pub-actions button:hover { border-color: var(--color-accent); color: var(--color-accent); text-decoration: none; }
+.pub-empty { text-align: center; padding: var(--space-lg); color: var(--color-text-muted); }
+
+/* --------------------------------------------------------------------------
+   8. PROJECTS
+   -------------------------------------------------------------------------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+.project-card { padding: var(--space-md); }
+.project-status {
+  float: right;
+}
+.project-details {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xs) 0;
+  font-size: 0.88rem;
+}
+.project-details li { display: flex; justify-content: space-between; padding: 0.25rem 0; border-bottom: 1px dashed var(--color-border); }
+.project-details li span:first-child { color: var(--color-text-muted); }
+.project-gallery { display: flex; gap: 0.4rem; margin-top: 0.6rem; }
+.project-gallery img { width: 100%; border-radius: var(--radius-sm); aspect-ratio: 4/3; object-fit: cover; background: var(--color-bg-alt); }
+
+/* --------------------------------------------------------------------------
+   9. TEACHING
+   -------------------------------------------------------------------------- */
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+.teaching-card { padding: var(--space-md); }
+.teaching-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.teaching-tabs { display: flex; gap: 0.5rem; margin-bottom: var(--space-md); }
+.teaching-tab {
+  padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border); background: transparent; cursor: pointer;
+  color: var(--color-text); font-family: var(--font-heading); font-size: 0.88rem;
+}
+.teaching-tab.active { background: var(--gradient-accent); color: #fff; border-color: transparent; }
+.teaching-panel { display: none; }
+.teaching-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
+
+/* --------------------------------------------------------------------------
+   10. STUDENTS
+   -------------------------------------------------------------------------- */
+.student-tabs { display: flex; gap: 0.5rem; margin-bottom: var(--space-md); flex-wrap: wrap; }
+.student-grid {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-md);
+}
+.student-grid.active { display: grid; }
+.student-card { padding: var(--space-md); text-align: left; }
+.student-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--gradient-accent);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   11. NEWS TIMELINE / AWARDS TIMELINE
+   -------------------------------------------------------------------------- */
+.timeline { position: relative; margin-left: 1rem; }
+.timeline::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px; background: var(--color-border);
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 var(--space-lg) 2rem;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.revealed { opacity: 1; transform: translateY(0); }
+.timeline-item::before {
+  content: "";
+  position: absolute; left: -6px; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--gradient-accent);
+  box-shadow: 0 0 0 4px var(--color-bg);
+}
+.timeline-date {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   12. PROFESSIONAL ACTIVITIES
+   -------------------------------------------------------------------------- */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+.activity-card { padding: var(--space-md); }
+.activity-card ul { margin: 0.4rem 0 0; padding-left: 1.1rem; font-size: 0.9rem; color: var(--color-text-muted); }
+
+/* --------------------------------------------------------------------------
+   13. GALLERY
+   -------------------------------------------------------------------------- */
+.gallery-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: var(--space-md); }
+.gallery-grid {
+  columns: 4 220px;
+  column-gap: var(--space-sm);
+}
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.gallery-item img { width: 100%; transition: transform var(--transition-base); background: var(--color-bg-alt); }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 0.5rem 0.7rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.65), transparent);
+  color: #fff; font-size: 0.78rem; margin: 0;
+}
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(5, 10, 20, 0.9);
+  display: none; align-items: center; justify-content: center;
+  padding: var(--space-md);
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 80vh; border-radius: var(--radius-sm); }
+.lightbox-close {
+  position: absolute; top: var(--space-md); right: var(--space-md);
+  background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer;
+}
+.lightbox-caption { color: #fff; text-align: center; margin-top: 0.6rem; }
+
+/* --------------------------------------------------------------------------
+   14. DOWNLOADS / RESOURCES
+   -------------------------------------------------------------------------- */
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+.download-card {
+  padding: var(--space-md);
+  text-align: center;
+}
+.download-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+
+/* --------------------------------------------------------------------------
+   15. CONTACT
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+.contact-info-list { list-style: none; padding: 0; }
+.contact-info-list li { display: flex; gap: 0.7rem; margin-bottom: var(--space-sm); }
+.contact-info-list .icon { color: var(--color-accent); }
+.contact-map {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  margin-top: var(--space-sm);
+}
+.contact-map iframe { width: 100%; height: 220px; border: 0; display: block; }
+.social-row { display: flex; gap: 0.7rem; margin-top: var(--space-sm); }
+.social-row a {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+[data-theme="dark"] .social-row a { color: #e7ecf3; }
+.social-row a:hover { border-color: var(--color-accent); color: var(--color-accent); text-decoration: none; }
+
+.form-group { margin-bottom: var(--space-sm); }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+.form-status { font-size: 0.85rem; margin-top: 0.5rem; min-height: 1.2em; }
+.form-status.success { color: #1a7f37; }
+
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------------
+   16. FOOTER
+   -------------------------------------------------------------------------- */
+footer {
+  background: var(--color-primary);
+  color: #cfe0f5;
+  padding: var(--space-xl) 0 var(--space-md);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.footer-grid h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.6rem; }
+.footer-grid ul { list-style: none; padding: 0; margin: 0; }
+.footer-grid a { color: #cfe0f5; font-size: 0.88rem; }
+.footer-grid a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: var(--space-md);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  font-size: 0.8rem; color: #9fbadd;
+}
+
+/* --------------------------------------------------------------------------
+   17. BACK TO TOP / MISC WIDGETS
+   -------------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 24px -8px var(--color-shadow-strong);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  z-index: 900;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* --------------------------------------------------------------------------
+   18. PRINT (CV-friendly)
+   -------------------------------------------------------------------------- */
+@media print {
+  .navbar, .back-to-top, .theme-toggle, .nav-toggle, .lightbox,
+  .hero-actions, footer, .gallery-filters, .pub-controls { display: none !important; }
+  section { padding: 1rem 0; }
+  body { color: #000; background: #fff; }
+}
+
+/* --------------------------------------------------------------------------
+   19. RESPONSIVE ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .gallery-grid { columns: 2 160px; }
+  section { padding: var(--space-xl) 0; }
+}
+
+</style>
+
+<!-- ================= Schema.org structured data (edit before deploying) ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Santos Ku. Baliarsingh",
+  "jobTitle": "Assistant Professor",
+  "worksFor": {
+    "@type": "CollegeOrUniversity",
+    "name": "Kalinga Institute of Industrial Technology (KIIT)"
+  },
+  "url": "https://your-username.github.io/faculty-website/",
+  "sameAs": [
+    "https://scholar.google.com/",
+    "https://orcid.org/",
+    "https://github.com/",
+    "https://www.linkedin.com/"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">Santos Ku. Baliarsingh</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#students">Students</a></li>
+      <li><a href="#awards">Responsibilities</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">School of Computer Engineering</span>
+        <h1 class="hero-name">Dr. Santos Ku. Baliarsingh</h1>
+        <p class="hero-role">Assistant Professor</p>
+        <p class="hero-dept">School of Computer Engineering, KIIT Deemed to be University, Bhubaneswar, India</p>
+        <div class="hero-typing">Researching <span id="typing-text">Artificial Intelligence</span><span class="cursor">&nbsp;</span></div>
+        <p class="hero-summary">
+          I work on AI-generated text detection, video anomaly detection, and applied
+          machine learning for healthcare — including a smartphone-based deep learning
+          system for early oral cancer screening.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="cv/cv-placeholder.pdf" download>⬇ Download CV</a>
+          <a class="btn btn-outline" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn btn-outline" href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+          <a class="btn btn-outline" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="mailto:baliarsingh.santosh@gmail.com">Email</a>
+        </div>
+        <p class="placeholder-note">Placeholder: add your Google Scholar / ORCID / GitHub / LinkedIn profile links and your photo (Scholar/ORCID/GitHub/LinkedIn URLs weren't in the CV, so these still point to generic placeholders).</p>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring" aria-hidden="true"></div>
+        <img class="hero-photo" src="images/profile-placeholder.jpg" alt="Portrait of Dr. Santos Ku. Baliarsingh" width="320" height="320" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">About</span>
+        <h2 class="section-title">Biography &amp; Background</h2>
+        <p class="section-subtitle">A short overview of research focus, education and experience. Replace every line below with your own biography.</p>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <h3>Biography</h3>
+          <p>
+            Dr. Santos Ku. Baliarsingh is an Assistant Professor in the School of
+            Computer Engineering at KIIT Deemed to be University, Bhubaneswar, where he
+            has taught and mentored students since December 2019. He earned his Ph.D. in
+            Computer Science and Engineering from IIIT Bhubaneswar in 2020, working on
+            metaheuristic-based classification algorithms for high-dimensional microarray
+            data. His current research spans AI-generated text detection, video anomaly
+            detection, and applied deep learning for healthcare — including a smartphone-based
+            screening tool for oral potentially malignant disorders, funded by ICMR. He
+            has authored 17 journal papers, 31 conference papers and a book chapter, and
+            currently supervises four Ph.D. scholars.
+          </p>
+          <h3>Research Interests</h3>
+          <div class="keyword-list">
+            <span class="badge">AI-Generated Text Detection</span>
+            <span class="badge">Video Anomaly Detection</span>
+            <span class="badge">Machine Learning</span>
+            <span class="badge">Deep Learning</span>
+            <span class="badge">Bioinformatics &amp; Metaheuristics</span>
+            <span class="badge">Healthcare AI</span>
+          </div>
+          <h3 style="margin-top: var(--space-md);">Education</h3>
+          <ul class="about-list">
+            <li><span>Ph.D., Computer Science &amp; Engineering</span><span>IIIT Bhubaneswar, 2015–2020</span></li>
+            <li><span>M.Tech, Computer Science &amp; Engineering (CGPA 8.13)</span><span>NIT Rourkela, 2009–2011</span></li>
+            <li><span>B.E., Computer Science &amp; Engineering (67.17%, 1st Class)</span><span>Synergy Institute of Engg. &amp; Tech., Dhenkanal, 2002–2006</span></li>
+          </ul>
+          <h3>Experience</h3>
+          <ul class="about-list">
+            <li><span>Assistant Professor, KIIT Deemed to be University</span><span>Dec 2019 – Present</span></li>
+            <li><span>Assistant Professor, Synergy Institute of Engg. &amp; Tech.</span><span>Jul 2011 – Jul 2015</span></li>
+            <li><span>Lecturer, Synergy Institute of Engg. &amp; Tech.</span><span>Nov 2006 – Jun 2009</span></li>
+          </ul>
+          <h3>Professional Membership</h3>
+          <div class="keyword-list">
+            <span class="badge badge-alt">Member, IEEE</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <h3>Quick Stats</h3>
+          <div class="stats-grid">
+            <div class="card stat-card"><span class="stat-number" data-count="19">0</span><span class="stat-label">Years Experience</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="17">0</span><span class="stat-label">Journal Papers</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="31">0</span><span class="stat-label">Conference Papers</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="1">0</span><span class="stat-label">Funded Projects</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="601">0</span><span class="stat-label">Citations</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="11">0</span><span class="stat-label">h-index</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="11">0</span><span class="stat-label">i10-index</span></div>
+            <div class="card stat-card"><span class="stat-number" data-count="10">0</span><span class="stat-label">Scholars Guided</span></div>
+          </div>
+          <p class="placeholder-note">Citations, h-index and i10-index are from Google Scholar as of your CV (July 2026) — keep these updated periodically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH
+       ============================================================ -->
+  <section id="research" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Research</span>
+        <h2 class="section-title">Research Areas</h2>
+        <p class="section-subtitle">Core themes of my research programme. Swap in your own areas, icons and images.</p>
+      </div>
+      <div class="research-grid">
+        <div class="card research-card reveal">
+          <div class="research-icon">📝</div>
+          <h3>AI-Generated Text Detection</h3>
+          <p>Fine-tuned transformer, RoBERTa-CNN and XLNet-CNN hybrid models for detecting AI-generated academic text, including low-resource-language and privacy-preserving detection settings.</p>
+          <img src="images/research-detection.jpg" alt="Illustration representing AI-generated text detection research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">🎥</div>
+          <h3>Video Anomaly Detection</h3>
+          <p>Weakly-supervised and caption-aware frameworks (CA-VAD, MSPL-VAD, PoinCLIP-VAD) for detecting anomalies in surveillance video.</p>
+          <img src="images/research-genai.jpg" alt="Illustration representing video anomaly detection research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">🏥</div>
+          <h3>Healthcare AI</h3>
+          <p>Smartphone-based deep learning for early detection of oral potentially malignant disorders (ICMR-funded), plus diabetic retinopathy and multi-disease prediction models.</p>
+          <img src="images/research-cv.jpg" alt="Illustration representing healthcare AI research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">🧬</div>
+          <h3>Bioinformatics &amp; Metaheuristics</h3>
+          <p>Metaheuristic-optimized extreme learning machines for high-dimensional microarray gene-expression and cancer classification — the focus of my Ph.D. thesis.</p>
+          <img src="images/research-dl.jpg" alt="Illustration representing bioinformatics research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">💬</div>
+          <h3>NLP &amp; Text Summarization</h3>
+          <p>Abstractive summarization with GPT-2, T5, PEGASUS and BART, and agentic approaches to factuality-aware long-document summarization.</p>
+          <img src="images/research-nlp.jpg" alt="Illustration representing NLP research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">👁️</div>
+          <h3>Computer Vision</h3>
+          <p>Person and vehicle re-identification, pose estimation, and brain-tumour classification using CNN and transformer architectures.</p>
+          <img src="images/research-llm.jpg" alt="Illustration representing computer vision research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">📊</div>
+          <h3>Applied Machine Learning</h3>
+          <p>Predictive healthcare analytics, plant-disease detection, and comparative studies of ML approaches across real-world tabular datasets.</p>
+          <img src="images/research-ml.jpg" alt="Illustration representing applied machine learning research" loading="lazy" />
+        </div>
+        <div class="card research-card reveal">
+          <div class="research-icon">🛡️</div>
+          <h3>Academic Integrity &amp; Responsible AI</h3>
+          <p>Studying the academic-integrity implications of generative AI adoption and building tools that support fair assessment.</p>
+          <img src="images/research-responsible.jpg" alt="Illustration representing responsible AI research" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PUBLICATIONS
+       ============================================================ -->
+  <section id="publications">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Publications</span>
+        <h2 class="section-title">Publications (17 Journals &middot; 31 Conferences &middot; 1 Book Chapter)</h2>
+        <p class="section-subtitle">Search or filter by type. Duplicate a .pub-card block in index.html to add a new entry. DOI/PDF links are placeholders — add the real links per paper.</p>
+      </div>
+
+      <div class="pub-controls reveal">
+        <input type="text" id="pub-search" class="pub-search" placeholder="Search publications by title, author or keyword…" aria-label="Search publications" />
+        <button class="filter-chip active" data-pub-filter="all">All</button>
+        <button class="filter-chip" data-pub-filter="journal">Journal</button>
+        <button class="filter-chip" data-pub-filter="conference">Conference</button>
+        <button class="filter-chip" data-pub-filter="book-chapter">Book Chapter</button>
+      </div>
+
+      <div class="pub-list">
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J17] PoinCLIP-VAD: a hyperbolic cross-modal fusion framework for video anomaly detection</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 4.9</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">D P Senapati, S K Pani, S K Baliarsingh, P P Dev, R Somula &mdash; <em>Scientific Reports, Nature Publishing Group</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Somula2026, title={PoinCLIP-VAD: a hyperbolic cross-modal fusion framework for video anomaly detection}, author={D P Senapati, S K Pani, S K Baliarsingh, P P Dev, R Somula}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J15] Detecting AI-Generated Text in Low-Resource Languages Using Multilingual Language Models</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 2.7</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh &mdash; <em>International Journal of Machine Learning and Cybernetics, Springer Nature</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Baliarsingh2026, title={Detecting AI-Generated Text in Low-Resource Languages Using Multilingual Language Models}, author={M Prajapati, S K Baliarsingh}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J14] Detecting AI-generated essays using fine-tuned XLNet-CNN hybrid techniques: a study of the academic integrity challenge</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 2.7</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, P P Dev &mdash; <em>International Journal of Machine Learning and Cybernetics, Springer Nature</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Dev2026, title={Detecting AI-generated essays using fine-tuned XLNet-CNN hybrid techniques: a study of the academic integrity challenge}, author={M Prajapati, S K Baliarsingh, P P Dev}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J13] Detecting AI-generated text in high-resource languages: developing a RoBERTa-CNN hybrid model for academic integrity challenge</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 2.7</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, P P Dev &mdash; <em>International Journal of Machine Learning and Cybernetics, Springer Nature</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Dev2026, title={Detecting AI-generated text in high-resource languages: developing a RoBERTa-CNN hybrid model for academic integrity challenge}, author={M Prajapati, S K Baliarsingh, P P Dev}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J12] Integrating Vision and Language: An Improved VAD Model</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">M R Biswal, S K Baliarsingh &mdash; <em>Journal of Applied Science and Technology Trends, IPAcademia</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Baliarsingh2026, title={Integrating Vision and Language: An Improved VAD Model}, author={M R Biswal, S K Baliarsingh}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J11] Exploring Abstractive Summarization of Pre-trained Models: A Study on GPT-2, T5, PEGASUS and BART</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">2025</span></div>
+          </div>
+          <p class="pub-meta">P V Khandar, D K Mohanty, S K Baliarsingh &mdash; <em>International Journal of Applied Mathematics, Diogenes</em>, 2025</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Baliarsingh2025, title={Exploring Abstractive Summarization of Pre-trained Models: A Study on GPT-2, T5, PEGASUS and BART}, author={P V Khandar, D K Mohanty, S K Baliarsingh}, year={2025}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J10] Health professionals&rsquo; perspectives on the use of Artificial Intelligence in healthcare: A systematic review</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 3.1</span><span class="badge badge-alt">2025</span></div>
+          </div>
+          <p class="pub-meta">R K Sahoo, K C Sahoo, S Negi, S K Baliarsingh, B Panda, S Pati &mdash; <em>Patient Education and Counseling, Elsevier</em>, 2025</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Pati2025, title={Health professionals&amp;rsquo; perspectives on the use of Artificial Intelligence in healthcare: A systematic review}, author={R K Sahoo, K C Sahoo, S Negi, S K Baliarsingh, B Panda, S Pati}, year={2025}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J9] CA-VAD: Caption Aware Video Anomaly Detection in surveillance videos</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 3.1</span><span class="badge badge-alt">2025</span></div>
+          </div>
+          <p class="pub-meta">D P Senapati, S K Pani, S K Baliarsingh, P P Dev, H K Tripathy &mdash; <em>Journal of Visual Communication and Image Representation, Elsevier</em>, 2025</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Tripathy2025, title={CA-VAD: Caption Aware Video Anomaly Detection in surveillance videos}, author={D P Senapati, S K Pani, S K Baliarsingh, P P Dev, H K Tripathy}, year={2025}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J8] Diagnostic performance of artificial intelligence in detecting oral potentially malignant disorders and oral cancer using medical diagnostic imaging: a systematic review and meta-analysis</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 3.1</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">R K Sahoo, K C Sahoo, G C Dash, G Kumar, S K Baliarsingh, B Panda, S Pati &mdash; <em>Frontiers in Oral Health, Frontiers</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Pati2024, title={Diagnostic performance of artificial intelligence in detecting oral potentially malignant disorders and oral cancer using medical diagnostic imaging: a systematic review and meta-analysis}, author={R K Sahoo, K C Sahoo, G C Dash, G Kumar, S K Baliarsingh, B Panda, S Pati}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J7] SARA: A Memetic Algorithm for High-dimensional Biomedical Data</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 6.6</span><span class="badge badge-alt">2021</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, K Muhammad, S Bakshi &mdash; <em>Applied Soft Computing, Elsevier, 101, 107009</em>, 2021</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Bakshi2021, title={SARA: A Memetic Algorithm for High-dimensional Biomedical Data}, author={S K Baliarsingh, K Muhammad, S Bakshi}, year={2021}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J6] Analysis of High-Dimensional Genomic Data Using MapReduce based Probabilistic Neural Network</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 4.8</span><span class="badge badge-alt">2020</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, S Vipsita, A H Gandomi, A Panda, S Bakshi, S Ramasubbareddy &mdash; <em>Computer Methods and Programs in Biomedicine, Elsevier, 195, 105625</em>, 2020</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Ramasubbareddy2020, title={Analysis of High-Dimensional Genomic Data Using MapReduce based Probabilistic Neural Network}, author={S K Baliarsingh, S Vipsita, A H Gandomi, A Panda, S Bakshi, S Ramasubbareddy}, year={2020}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J5] Analysis of high-dimensional biomedical data using an evolutionary multi-objective emperor penguin optimizer</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 8.5</span><span class="badge badge-alt">2019</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, S Vipsita, K Muhammad, S Bakshi &mdash; <em>Swarm and Evolutionary Computation, Elsevier, 48, 262-273</em>, 2019</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Bakshi2019, title={Analysis of high-dimensional biomedical data using an evolutionary multi-objective emperor penguin optimizer}, author={S K Baliarsingh, S Vipsita, K Muhammad, S Bakshi}, year={2019}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J4] Analysis of high-dimensional genomic data employing a novel bio-inspired algorithm</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 6.6</span><span class="badge badge-alt">2019</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, S Vipsita, K Muhammad, B Dash, S Bakshi &mdash; <em>Applied Soft Computing, Elsevier, 77, 520-532</em>, 2019</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Bakshi2019, title={Analysis of high-dimensional genomic data employing a novel bio-inspired algorithm}, author={S K Baliarsingh, S Vipsita, K Muhammad, B Dash, S Bakshi}, year={2019}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J3] A Memetic Algorithm using Emperor Penguin and Social Engineering Optimization for Medical Data Classification</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 6.6</span><span class="badge badge-alt">2019</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, W Ding, S Vipsita, S Bakshi &mdash; <em>Applied Soft Computing, Elsevier, 85, 105773</em>, 2019</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Bakshi2019, title={A Memetic Algorithm using Emperor Penguin and Social Engineering Optimization for Medical Data Classification}, author={S K Baliarsingh, W Ding, S Vipsita, S Bakshi}, year={2019}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J2] A new optimal gene selection approach for cancer classification using enhanced Jaya-based forest optimization algorithm</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">2019</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, S Vipsita, B Dash &mdash; <em>Neural Computing and Applications, Springer, 32, 8599-8616</em>, 2019</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Dash2019, title={A new optimal gene selection approach for cancer classification using enhanced Jaya-based forest optimization algorithm}, author={S K Baliarsingh, S Vipsita, B Dash}, year={2019}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="journal">
+          <div class="pub-top">
+            <h3 class="pub-title">[J1] A chaotic emperor penguin optimized extreme learning machine for microarray cancer classification</h3>
+            <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-alt">IF 1.9</span><span class="badge badge-alt">2019</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, S Vipsita &mdash; <em>IET Systems Biology</em>, 2019</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@article{Vipsita2019, title={A chaotic emperor penguin optimized extreme learning machine for microarray cancer classification}, author={S K Baliarsingh, S Vipsita}, year={2019}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C31] A Multi-Stage Agentic Approach to Factuality-Aware Long and Multi-Document Text Summarization</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">P V Khandar, D K Mohanty, S K Baliarsingh &mdash; <em>International Conference on Innovations in Communication, Geoscience and Robotics (ICICGR), IEEE, Bhubaneswar</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2026, title={A Multi-Stage Agentic Approach to Factuality-Aware Long and Multi-Document Text Summarization}, author={P V Khandar, D K Mohanty, S K Baliarsingh}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C30] Testing Privacy-Preserving AI-Generated Text Detection Using Large Language Models</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, J P Mohanty, P P Dev, J Hota, M R Biswal &mdash; <em>International Conference on Emerging Systems and Intelligent Computing (ESIC), IEEE, Bhubaneswar</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2026, title={Testing Privacy-Preserving AI-Generated Text Detection Using Large Language Models}, author={M Prajapati, S K Baliarsingh, J P Mohanty, P P Dev, J Hota, M R Biswal}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C29] Real-Time Pose Estimation Using Lightweight High Resolution Network</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">S Kumar, P P Dev, J P Mohanty, S K Baliarsingh, J Hota &mdash; <em>OITS International Conference on Information Technology (OCIT), IEEE, Bhubaneswar</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Hota2026, title={Real-Time Pose Estimation Using Lightweight High Resolution Network}, author={S Kumar, P P Dev, J P Mohanty, S K Baliarsingh, J Hota}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C28] MSPL-VAD: Multi-Stage Pseudo-Labeling framework for Video Anomaly Detection</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2025</span></div>
+          </div>
+          <p class="pub-meta">D P Senapati, S K Pani, S K Baliarsingh, M R Nayak, P P Dev &mdash; <em>International Conference on Innovations in Intelligent Systems: Advancements in Computing, Communication, and Cybersecurity (ISAC3), IEEE, Bhubaneswar</em>, 2025</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Dev2025, title={MSPL-VAD: Multi-Stage Pseudo-Labeling framework for Video Anomaly Detection}, author={D P Senapati, S K Pani, S K Baliarsingh, M R Nayak, P P Dev}, year={2025}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C27] Detecting AI-Generated Text Using Fine-Tuned Transformers: A Study on Academic Integrity</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2025</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, P P Dev, B M Saleh, J Hota, M R Biswal &mdash; <em>International Conference on Advanced Network Technologies and Intelligent Computing, Springer, pp 240-266, IIT BHU</em>, 2025</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2025, title={Detecting AI-Generated Text Using Fine-Tuned Transformers: A Study on Academic Integrity}, author={M Prajapati, S K Baliarsingh, P P Dev, B M Saleh, J Hota, M R Biswal}, year={2025}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C26] Mamba-Hybrid Language Models: Advancing Detection of AI-Generated Text in Academic Contexts</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2025</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, P P Dev, B M Saleh, J Hota, M R Biswal &mdash; <em>ESIC 2025, IEEE, pp 589-594, KIIT Deemed to be University, Bhubaneswar</em>, 2025</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2025, title={Mamba-Hybrid Language Models: Advancing Detection of AI-Generated Text in Academic Contexts}, author={M Prajapati, S K Baliarsingh, P P Dev, B M Saleh, J Hota, M R Biswal}, year={2025}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C25] CFViT: Coarse and Fine-grained Vision Transformer for Vehicle Re-Identification</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">S P Sinha, P P Dev, S K Baliarsingh, R A Behera, J P Mohanty &mdash; <em>OCIT 2024, IEEE, pp 234-239, NIT Raipur</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Mohanty2024, title={CFViT: Coarse and Fine-grained Vision Transformer for Vehicle Re-Identification}, author={S P Sinha, P P Dev, S K Baliarsingh, R A Behera, J P Mohanty}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C24] Brain Tumour Classification: A Comparative Analysis of CNN Models and Generalisation Across Datasets</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">A Manna, Aditya Saha, Jahnvi Jain, A Kamal, S K Baliarsingh, P P Dev &mdash; <em>OCIT 2024, IEEE, pp 357-362, NIT Raipur</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Dev2024, title={Brain Tumour Classification: A Comparative Analysis of CNN Models and Generalisation Across Datasets}, author={A Manna, Aditya Saha, Jahnvi Jain, A Kamal, S K Baliarsingh, P P Dev}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C23] STFANet: Learning Spatio-Temporal Feature Aggregation for Person Re-Identification</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">R A Behera, P P Dev, S K Baliarsingh, S P Sinha, M R Biswal &mdash; <em>OCIT 2024, IEEE, pp 228-233, NIT Raipur</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2024, title={STFANet: Learning Spatio-Temporal Feature Aggregation for Person Re-Identification}, author={R A Behera, P P Dev, S K Baliarsingh, S P Sinha, M R Biswal}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C22] Predictive Healthcare Analytics: A Multidisease Approach using Logistic Regression</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">S Naik, P Kumar, S Saha, S D Bairagya, D Rawat, S K Baliarsingh &mdash; <em>15th International Conference on Computing Communication and Networking Technologies (ICCCNT), IEEE, pp 1-7, IIT Mandi</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2024, title={Predictive Healthcare Analytics: A Multidisease Approach using Logistic Regression}, author={S Naik, P Kumar, S Saha, S D Bairagya, D Rawat, S K Baliarsingh}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C21] Weakly Supervised Temporal Attention Framework for Video Anomaly Detection</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">M R Biswal, P P Dev, S K Baliarsingh &mdash; <em>15th ICCCNT, IEEE, pp 1-7, IIT Mandi</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2024, title={Weakly Supervised Temporal Attention Framework for Video Anomaly Detection}, author={M R Biswal, P P Dev, S K Baliarsingh}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C20] Unraveling Diabetes Detection: A Comparative Study of Machine Learning Approaches</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">J Agarwal, H Chauhan, S Gupta, S Mondal, S Mahanta, S K Baliarsingh &mdash; <em>15th ICCCNT, IEEE, pp 1-6, IIT Mandi</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2024, title={Unraveling Diabetes Detection: A Comparative Study of Machine Learning Approaches}, author={J Agarwal, H Chauhan, S Gupta, S Mondal, S Mahanta, S K Baliarsingh}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C19] Detection of AI-Generated Text Using Large Language Model</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, C Dora, A Bhoi, J Hota, J P Mohanty &mdash; <em>ESIC, IEEE, KIIT Deemed to be University, Bhubaneswar</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Mohanty2024, title={Detection of AI-Generated Text Using Large Language Model}, author={M Prajapati, S K Baliarsingh, C Dora, A Bhoi, J Hota, J P Mohanty}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C18] A Smartphone-based Deep Learning Framework for Early Detection of Oral Cancer Signs</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, P P Dev, A Bandyopadhyay, A K Dash, R Pradhan &mdash; <em>ESIC, IEEE, KIIT Deemed to be University, Bhubaneswar</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Pradhan2024, title={A Smartphone-based Deep Learning Framework for Early Detection of Oral Cancer Signs}, author={S K Baliarsingh, P P Dev, A Bandyopadhyay, A K Dash, R Pradhan}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C17] Temporal Relation-Embedded Transformer for Weakly-Supervised Video Anomaly Detection</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">T Chowdhury, P P Dev, S K Baliarsingh, J P Mohanty, M R Biswal &mdash; <em>11th International Conference on Signal Processing and Integrated Networks (SPIN), IEEE, pp 439-445, Amity University, Noida</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2024, title={Temporal Relation-Embedded Transformer for Weakly-Supervised Video Anomaly Detection}, author={T Chowdhury, P P Dev, S K Baliarsingh, J P Mohanty, M R Biswal}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C16] IoT-Based Smart Irrigation System for Optimal Water-Resource Utilization in Indian Agriculture</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">A Bhoi, S K Baliarsingh, P P Dev, U Ghugar, M R Biswal &mdash; <em>OCIT, IEEE, pp 278-283, NIT Raipur</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2024, title={IoT-Based Smart Irrigation System for Optimal Water-Resource Utilization in Indian Agriculture}, author={A Bhoi, S K Baliarsingh, P P Dev, U Ghugar, M R Biswal}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C15] Dynamic Population-Based Jaya Algorithm for Genetic Biomarker Classification</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2024</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, P P Dev, A Bhoi, J P Mohanty, J Hota &mdash; <em>OCIT, IEEE, pp 272-277, NIT Raipur</em>, 2024</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Hota2024, title={Dynamic Population-Based Jaya Algorithm for Genetic Biomarker Classification}, author={S K Baliarsingh, P P Dev, A Bhoi, J P Mohanty, J Hota}, year={2024}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C14] DG-GAN: A Deep Neural Network for Real-World Anomaly Detection in Surveillance Videos</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">D P Senapati, P P Dev, S K Baliarsingh, S Nayak, M R Biswal &mdash; <em>International Conference on Advanced Network Technologies and Intelligent Computing, IEEE, pp 93-106, BHU, Varanasi</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2023, title={DG-GAN: A Deep Neural Network for Real-World Anomaly Detection in Surveillance Videos}, author={D P Senapati, P P Dev, S K Baliarsingh, S Nayak, M R Biswal}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C13] Single-Cell Drug Perturbations Prediction Using Machine Learning</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, P P Dev, S Nayak, M R Biswal &mdash; <em>International Conference on Advanced Network Technologies and Intelligent Computing, IEEE, pp 36-49, BHU, Varanasi</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Biswal2023, title={Single-Cell Drug Perturbations Prediction Using Machine Learning}, author={M Prajapati, S K Baliarsingh, P P Dev, S Nayak, M R Biswal}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C12] Effect of Domain on Word Prediction quality: Using Stochastic and Neural Network Models</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">A K Dash, R Pradhan, S Tripathy, S K Baliarsingh &mdash; <em>OCIT, IEEE, pp 749-754, NIT Raipur</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2023, title={Effect of Domain on Word Prediction quality: Using Stochastic and Neural Network Models}, author={A K Dash, R Pradhan, S Tripathy, S K Baliarsingh}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C11] Detection of Diseases in Tomato Plants using Convolutional Neural Network</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">U K Singh, R Kumar, S Kumar, S Kar, S K Baliarsingh &mdash; <em>14th ICCCNT, IEEE, pp 1-6, IIT Delhi</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2023, title={Detection of Diseases in Tomato Plants using Convolutional Neural Network}, author={U K Singh, R Kumar, S Kumar, S Kar, S K Baliarsingh}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C10] A Comparative Study of Deep Learning Models for American SL Recognition</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">S Mishra, S Gupta, R Singh, S K Baliarsingh &mdash; <em>14th ICCCNT, IEEE, pp 1-7, IIT Delhi</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2023, title={A Comparative Study of Deep Learning Models for American SL Recognition}, author={S Mishra, S Gupta, R Singh, S K Baliarsingh}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C9] A CNN-based Prediction Model for Age, Gender, and Ethnicity Using Facial Images</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">M Iqbal, A Rukhsar, S K Baliarsingh &mdash; <em>14th ICCCNT, IEEE, pp 1-7, IIT Delhi</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2023, title={A CNN-based Prediction Model for Age, Gender, and Ethnicity Using Facial Images}, author={M Iqbal, A Rukhsar, S K Baliarsingh}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C8] A Novel Approach Towards Photorealistic Image Stylization</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">A Mishra, B Ghosh, S Shekhar, S K Baliarsingh &mdash; <em>14th ICCCNT, IEEE, pp 1-7, IIT Delhi</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2023, title={A Novel Approach Towards Photorealistic Image Stylization}, author={A Mishra, B Ghosh, S Shekhar, S K Baliarsingh}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C7] Detection and Classification of Blood Cancer Using Deep Learning Framework</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, J Hota, P P Dev, S Das &mdash; <em>International Conference on Women Researchers in Electronics and Computing, IEEE, pp 1-6, NIT Jalandhar</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Das2023, title={Detection and Classification of Blood Cancer Using Deep Learning Framework}, author={M Prajapati, S K Baliarsingh, J Hota, P P Dev, S Das}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C6] An Early diagnosis of diabetic retinopathy using ConvNeXt</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">Devanshi, S K Baliarsingh, P P Dev &mdash; <em>10th SPIN, IEEE, pp 739-743, Amity University, Noida</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Dev2023, title={An Early diagnosis of diabetic retinopathy using ConvNeXt}, author={Devanshi, S K Baliarsingh, P P Dev}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C5] MobileNetV3 based Classification Model for Diabetic Retinopathy</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, J Hota &mdash; <em>10th SPIN, IEEE, pp 739-743, Amity University, Noida</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Hota2023, title={MobileNetV3 based Classification Model for Diabetic Retinopathy}, author={M Prajapati, S K Baliarsingh, J Hota}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C4] Retinal and Semantic Segmentation of Diabetic Retinopathy Images Using MobileNetV3</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2023</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh, J Hota, P P Dev, S Das &mdash; <em>International Conference on Computer, Electrical & Communication Engineering (ICCECE), IEEE, pp 1-6, Amity University, Noida</em>, 2023</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Das2023, title={Retinal and Semantic Segmentation of Diabetic Retinopathy Images Using MobileNetV3}, author={M Prajapati, S K Baliarsingh, J Hota, P P Dev, S Das}, year={2023}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C3] Jaya Optimized Extreme Learning Machine for Breast Cancer Data Classification</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2021</span></div>
+          </div>
+          <p class="pub-meta">S K Baliarsingh, C Dora, S Vipsita &mdash; <em>Springer, Intelligent and Cloud Computing, pp 459-467</em>, 2021</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Vipsita2021, title={Jaya Optimized Extreme Learning Machine for Breast Cancer Data Classification}, author={S K Baliarsingh, C Dora, S Vipsita}, year={2021}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C2] Cancer Classification using improved Extreme Learning Machine</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2019</span></div>
+          </div>
+          <p class="pub-meta">Ankita Shreya, S Vipsita, S K Baliarsingh &mdash; <em>16th IEEE International Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB), pp 1-9, Italy</em>, 2019</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2019, title={Cancer Classification using improved Extreme Learning Machine}, author={Ankita Shreya, S Vipsita, S K Baliarsingh}, year={2019}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="conference">
+          <div class="pub-top">
+            <h3 class="pub-title">[C1] Biclustering of microarray data employing multi-objective GA</h3>
+            <div class="pub-badges"><span class="badge">Conference</span><span class="badge badge-alt">2017</span></div>
+          </div>
+          <p class="pub-meta">R Acharya, S Vipsita, S K Baliarsingh &mdash; <em>14th IEEE India Council International Conference (INDICON), pp 1-6, IIT Roorkee</em>, 2017</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@inproceedings{Baliarsingh2017, title={Biclustering of microarray data employing multi-objective GA}, author={R Acharya, S Vipsita, S K Baliarsingh}, year={2017}}">BibTeX</button>
+          </div>
+        </article>
+
+        <article class="card pub-card reveal" data-type="book-chapter">
+          <div class="pub-top">
+            <h3 class="pub-title">[B1] AI-Generated Text Detection: A Hybrid CNN-BiLSTM And BERT-Based Large Language Model Approach</h3>
+            <div class="pub-badges"><span class="badge">Book Chapter</span><span class="badge badge-alt">2026</span></div>
+          </div>
+          <p class="pub-meta">M Prajapati, S K Baliarsingh &mdash; <em>Research Advances in Intelligent Computing, CRC Press</em>, 2026</p>
+          <div class="pub-actions">
+            <a href="publications/">PDF</a>
+            <button class="copy-bibtex" data-bibtex="@incollection{Baliarsingh2026, title={AI-Generated Text Detection: A Hybrid CNN-BiLSTM And BERT-Based Large Language Model Approach}, author={M Prajapati, S K Baliarsingh}, year={2026}}">BibTeX</button>
+          </div>
+        </article>
+
+        <p class="pub-empty" id="pub-empty" style="display:none;">No publications match your search or filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+       ============================================================ -->
+  <section id="projects" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Projects</span>
+        <h2 class="section-title">Funded &amp; Ongoing Projects</h2>
+        <p class="section-subtitle">Duplicate a .project-card block to add another project.</p>
+      </div>
+      <div class="project-grid">
+        <div class="card project-card reveal">
+          <span class="badge project-status">Ongoing</span>
+          <h3>Development and Diagnostic Validation of a Mobile Phone-Based Deep Learning Tool for Early Detection of Oral Potentially Malignant Disorders (OPMDs) Using Smartphone-Captured Images</h3>
+          <p>Developing and clinically validating a mobile-based deep learning system for early detection of Oral Potentially Malignant Disorders using smartphone-captured images, enabling accessible, low-cost and scalable screening.</p>
+          <ul class="project-details">
+            <li><span>Funding Agency</span><span>Indian Council of Medical Research (ICMR), New Delhi</span></li>
+            <li><span>Budget</span><span>Rs. 1.1 Crore</span></li>
+            <li><span>Duration</span><span>2 Years</span></li>
+            <li><span>Role</span><span>Principal Investigator (one of three PIs)</span></li>
+            <li><span>Team</span><span>3 PIs, 4 Co-PIs</span></li>
+            <li><span>Collaborators</span><span>ICMR&ndash;RMRC Bhubaneswar; School of Computer Engineering, KIIT</span></li>
+          </ul>
+          <div class="project-gallery">
+            <img src="images/project-1a.jpg" alt="Project photo 1" loading="lazy" />
+            <img src="images/project-1b.jpg" alt="Project photo 2" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <p class="placeholder-note">Only one funded project is listed on the CV. Duplicate a .project-card block above to add more.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TEACHING
+       ============================================================ -->
+  <section id="teaching">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Teaching</span>
+        <h2 class="section-title">Courses</h2>
+        <p class="section-subtitle">Switch between current and previous semesters.</p>
+      </div>
+      <div class="teaching-tabs reveal">
+        <button class="teaching-tab active" data-panel="teaching-current">Current</button>
+        <button class="teaching-tab" data-panel="teaching-previous">Previous</button>
+      </div>
+
+      <div class="teaching-panel active" id="teaching-current">
+        <div class="card teaching-card reveal">
+          <span class="badge">Course Coordinator &middot; Autumn 2025</span>
+          <h3>Formal Language and Automata Theory</h3>
+          <p>Level: B.Tech, 3rd Semester</p>
+          <p>Also paper setter for this course in 2023, 2024 and 2026.</p>
+          <div class="teaching-links">
+            <a class="btn btn-sm btn-outline" href="#">Slides</a>
+            <a class="btn btn-sm btn-outline" href="#">Assignments</a>
+            <a class="btn btn-sm btn-outline" href="#">Question Bank</a>
+          </div>
+        </div>
+        <div class="card teaching-card reveal">
+          <span class="badge">Course Coordinator &middot; Spring 2025</span>
+          <h3>Machine Learning</h3>
+          <p>Level: B.Tech, 6th Semester</p>
+          <p>Also paper setter for this course in 2025.</p>
+          <div class="teaching-links">
+            <a class="btn btn-sm btn-outline" href="#">Slides</a>
+            <a class="btn btn-sm btn-outline" href="#">Assignments</a>
+          </div>
+        </div>
+        <div class="card teaching-card reveal">
+          <span class="badge badge-alt">Course Designed</span>
+          <h3>Data Modelling and Visualization</h3>
+          <p>Level: B.Tech, Data Science Specialization</p>
+          <p>Designed this course for the Data Science specialization track.</p>
+          <div class="teaching-links">
+            <a class="btn btn-sm btn-outline" href="#">Resources</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="teaching-panel" id="teaching-previous">
+        <div class="card teaching-card reveal">
+          <span class="badge badge-alt">1st Semester UG</span>
+          <h3>C Programming</h3>
+          <p>Foundational programming course for first-year undergraduates.</p>
+        </div>
+        <div class="card teaching-card reveal">
+          <span class="badge badge-alt">3rd Semester UG</span>
+          <h3>Data Structures and Algorithm</h3>
+          <p>Also paper setter for this course in 2022.</p>
+        </div>
+        <div class="card teaching-card reveal">
+          <span class="badge badge-alt">4th Semester UG</span>
+          <h3>Database Management System</h3>
+        </div>
+        <div class="card teaching-card reveal">
+          <span class="badge badge-alt">5th Semester UG</span>
+          <h3>Operating System</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STUDENTS
+       ============================================================ -->
+  <section id="students" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Students</span>
+        <h2 class="section-title">Students Guided</h2>
+        <p class="section-subtitle">Filter by degree level.</p>
+      </div>
+      <div class="student-tabs reveal">
+        <button class="student-tab active" data-panel="students-phd">PhD (Ongoing)</button>
+        <button class="student-tab" data-panel="students-mtech">MTech (Completed)</button>
+      </div>
+
+      <div class="student-grid active" id="students-phd">
+        <div class="card student-card reveal">
+          <div class="student-avatar">MB</div>
+          <h3>Manas Ranjan Biswal</h3>
+          <p><span class="badge">Ongoing</span> — Research area: Anomaly detection in surveillance videos</p>
+          <p>Joined 2021</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">PK</div>
+          <h3>Punam Virendra Khandar</h3>
+          <p><span class="badge">Ongoing</span> — Research area: Text summarization in NLP</p>
+          <p>Joined 2022</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">MP</div>
+          <h3>Manish Prajapati</h3>
+          <p><span class="badge">Ongoing</span> — Research area: AI-generated text detection using LLM</p>
+          <p>Joined 2023</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">DS</div>
+          <h3>Devi Prasad Senapati</h3>
+          <p><span class="badge">Ongoing</span> — Research area: Anomaly detection in surveillance videos</p>
+          <p>Joined 2024</p>
+        </div>
+      </div>
+      <div class="student-grid" id="students-mtech">
+        <div class="card student-card reveal">
+          <div class="student-avatar">MP</div>
+          <h3>Manish Prajapati</h3>
+          <p><span class="badge badge-alt">Completed 2023</span> — Thesis: Retinal and Semantic Segmentation and Classification of Diabetic Retinopathy Images Using Deep Learning</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">TC</div>
+          <h3>Tonmoyee Chowdhury</h3>
+          <p><span class="badge badge-alt">Completed 2024</span> — Thesis: Weakly Supervised Anomaly Detection in Surveillance Videos</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">DS</div>
+          <h3>Devi Prasad Senapati</h3>
+          <p><span class="badge badge-alt">Completed 2024</span> — Thesis: Anomaly Detection in Surveillance Videos: Recent Trends and Future Directions</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">SS</div>
+          <h3>Shrishti Priya Sinha</h3>
+          <p><span class="badge badge-alt">Completed 2025</span> — Thesis: Vehicle Re-Identification in Surveillance Videos using Deep Learning</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">RB</div>
+          <h3>Raj Aryan Behera</h3>
+          <p><span class="badge badge-alt">Completed 2025</span> — Thesis: Person Re-Identification in Surveillance Videos using Deep Learning</p>
+        </div>
+        <div class="card student-card reveal">
+          <div class="student-avatar">YH</div>
+          <h3>Yara Haje</h3>
+          <p><span class="badge badge-alt">Completed 2026</span> — Thesis: A Context-Quality-Aware Retrieval-Augmented Framework for Predicting the Severity of Traffic Accidents</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AWARDS
+       ============================================================ -->
+  <section id="awards">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Service</span>
+        <h2 class="section-title">Administrative &amp; Academic Responsibilities</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2026</span>
+          <h3>🎯 Hackathon Chair, ICDCIT 2026</h3>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2026</span>
+          <h3>📋 Member, NBA Documentation</h3>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2024 – 2026</span>
+          <h3>🏫 Hostel Superintendent</h3>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2024 – 2026</span>
+          <h3>🎓 Member, Training and Placement Cell</h3>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2024</span>
+          <h3>💰 Finance Chair, ICDCIT 2024</h3>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2024</span>
+          <h3>📚 Member, Board of Studies</h3>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2024</span>
+          <h3>🏅 Member, M.Tech. Scholarship Committee</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROFESSIONAL ACTIVITIES
+       ============================================================ -->
+  <section id="activities" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Service</span>
+        <h2 class="section-title">Professional Activities</h2>
+      </div>
+      <div class="activity-grid">
+        <div class="card activity-card reveal">
+          <h3>Journal Reviewer</h3>
+          <ul>
+            <li>Applied Soft Computing</li>
+            <li>Information Sciences</li>
+          </ul>
+        </div>
+        <div class="card activity-card reveal">
+          <h3>Session Chair</h3>
+          <ul>
+            <li>ICDCIT 2025</li>
+          </ul>
+        </div>
+        <div class="card activity-card reveal">
+          <h3>Judge / Resource Person</h3>
+          <ul>
+            <li>Judge, East Zone Semifinal, National One Health Hackathon "IDEA ONE", ICMR Bhubaneswar — Nov 2025</li>
+            <li>Resource Person, IIT Delhi&ndash;sponsored 12-Day AI Training Program for KISS Students — Jan 2025</li>
+          </ul>
+        </div>
+        <div class="card activity-card reveal">
+          <h3>Membership</h3>
+          <ul>
+            <li>Member, IEEE</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY
+       ============================================================ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Gallery</span>
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-subtitle">Filter by category and click any photo to enlarge it.</p>
+      </div>
+      <div class="gallery-filters reveal">
+        <button class="filter-chip active" data-gallery-filter="all">All</button>
+        <button class="filter-chip" data-gallery-filter="research">Research</button>
+        <button class="filter-chip" data-gallery-filter="teaching">Teaching</button>
+        <button class="filter-chip" data-gallery-filter="conference">Conference</button>
+        <button class="filter-chip" data-gallery-filter="events">Events</button>
+        <button class="filter-chip" data-gallery-filter="lab">Lab</button>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure class="gallery-item" data-category="research"><img src="images/gallery-1.jpg" alt="Research group meeting" loading="lazy" /><figcaption>Research group meeting, 2025</figcaption></figure>
+        <figure class="gallery-item" data-category="teaching"><img src="images/gallery-2.jpg" alt="Lecturing in NLP course" loading="lazy" /><figcaption>NLP lecture, Autumn 2025</figcaption></figure>
+        <figure class="gallery-item" data-category="conference"><img src="images/gallery-3.jpg" alt="Presenting at conference" loading="lazy" /><figcaption>Presenting at ICNLP 2024</figcaption></figure>
+        <figure class="gallery-item" data-category="events"><img src="images/gallery-4.jpg" alt="Department event" loading="lazy" /><figcaption>Department annual event</figcaption></figure>
+        <figure class="gallery-item" data-category="lab"><img src="images/gallery-5.jpg" alt="In the research lab" loading="lazy" /><figcaption>NLP research lab</figcaption></figure>
+        <figure class="gallery-item" data-category="research"><img src="images/gallery-6.jpg" alt="Discussing results with students" loading="lazy" /><figcaption>Reviewing results with students</figcaption></figure>
+      </div>
+      <p class="placeholder-note">Placeholder images — replace files in /images with your own photos (keep the same filenames or update the src attributes).</p>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+    <div>
+      <img id="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NEWS
+       ============================================================ -->
+  <section id="news" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">News</span>
+        <h2 class="section-title">Latest Updates</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-date">July 2026</span>
+          <h3>Paper accepted at ICICGR 2026</h3>
+          <p>"A Multi-Stage Agentic Approach to Factuality-Aware Long and Multi-Document Text Summarization" accepted at the IEEE International Conference on Innovations in Communication, Geoscience and Robotics, Bhubaneswar.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">March 2026</span>
+          <h3>Paper accepted at OCIT 2026</h3>
+          <p>"Real-Time Pose Estimation Using Lightweight High Resolution Network" accepted at the OITS International Conference on Information Technology, Bhubaneswar.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">February 2026</span>
+          <h3>Paper accepted at ESIC 2026</h3>
+          <p>"Testing Privacy-Preserving AI-Generated Text Detection Using Large Language Models" accepted at the International Conference on Emerging Systems and Intelligent Computing.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">November 2025</span>
+          <h3>Judge, National One Health Hackathon "IDEA ONE"</h3>
+          <p>Served as a judge for the East Zone Semifinal at ICMR, Bhubaneswar.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-date">July 2025</span>
+          <h3>Paper accepted at ISAC3 2025</h3>
+          <p>"MSPL-VAD: Multi-Stage Pseudo-Labeling framework for Video Anomaly Detection" accepted for publication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESOURCES / DOWNLOADS
+       ============================================================ -->
+  <section id="resources">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Resources</span>
+        <h2 class="section-title">Downloads</h2>
+        <p class="section-subtitle">Replace these placeholder files in /cv and /publications with your own documents.</p>
+      </div>
+      <div class="downloads-grid">
+        <div class="card download-card reveal">
+          <div class="download-icon">📄</div>
+          <h3>CV</h3>
+          <a class="btn btn-sm btn-outline" href="cv/cv-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">📚</div>
+          <h3>Publication List</h3>
+          <a class="btn btn-sm btn-outline" href="publications/" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🧭</div>
+          <h3>Research Statement</h3>
+          <a class="btn btn-sm btn-outline" href="cv/research-statement-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🧑‍🏫</div>
+          <h3>Teaching Statement</h3>
+          <a class="btn btn-sm btn-outline" href="cv/teaching-statement-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🖥️</div>
+          <h3>Slides</h3>
+          <a class="btn btn-sm btn-outline" href="publications/slides-placeholder.pdf" download>Download</a>
+        </div>
+        <div class="card download-card reveal">
+          <div class="download-icon">🗂️</div>
+          <h3>Datasets</h3>
+          <a class="btn btn-sm btn-outline" href="publications/" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section id="contact" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <ul class="contact-info-list">
+            <li><span class="icon">📍</span><span>School of Computer Engineering, KIIT Deemed to be University, Bhubaneswar, Odisha, India</span></li>
+            <li><span class="icon">✉️</span><span><a href="mailto:baliarsingh.santosh@gmail.com">baliarsingh.santosh@gmail.com</a><br /><a href="mailto:santos.baliarsinghfcs@kiit.ac.in">santos.baliarsinghfcs@kiit.ac.in</a></span></li>
+            <li><span class="icon">📞</span><span>+91 97773 50070 / +91 82800 05278</span></li>
+          </ul>
+          <div class="social-row">
+            <a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="Google Scholar">🎓</a>
+            <a href="https://orcid.org/" target="_blank" rel="noopener" aria-label="ORCID">🆔</a>
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">💻</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">🔗</a>
+            <a href="mailto:baliarsingh.santosh@gmail.com" aria-label="Email">📧</a>
+          </div>
+          <div class="contact-map">
+            <iframe title="Campus location map" loading="lazy" src="https://www.google.com/maps?q=KIIT%20Bhubaneswar&output=embed"></iframe>
+          </div>
+        </div>
+        <div class="reveal">
+          <form id="contact-form" class="card" style="padding: var(--space-md);">
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-status" id="form-status"></p>
+            <p class="placeholder-note">Frontend-only form. Connect to Formspree, Getform or EmailJS for real delivery — see script.js.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Santos Ku. Baliarsingh</h4>
+        <p style="color:#cfe0f5; font-size:0.85rem;">Assistant Professor, School of Computer Engineering, KIIT — AI-generated text detection, video anomaly detection, healthcare AI.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="cv/cv-placeholder.pdf">CV</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <p style="font-size:0.85rem;">Visitors: <span id="visitor-count">—</span></p>
+        <p style="font-size:0.85rem;">Last updated: <span id="footer-updated">July 2026</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="current-year"></span> Santos Ku. Baliarsingh. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; vanilla JavaScript.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script>
+/* ==========================================================================
+   FACULTY WEBSITE SCRIPT
+   Vanilla JS only. Each feature is self-contained; delete a block if you
+   don't need that feature. All selectors match index.html — if you rename
+   an id/class in the HTML, update it here too.
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ------------------------------------------------------------------
+     0. YEAR STAMP + LAST UPDATED (footer)
+     ------------------------------------------------------------------ */
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ------------------------------------------------------------------
+     1. MOBILE NAV TOGGLE
+     ------------------------------------------------------------------ */
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     2. ACTIVE NAV LINK ON SCROLL
+     ------------------------------------------------------------------ */
+  const sections = document.querySelectorAll('main section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+  const setActiveLink = () => {
+    let currentId = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 90;
+      if (window.scrollY >= top) currentId = sec.id;
+    });
+    navAnchors.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${currentId}`);
+    });
+  };
+  window.addEventListener('scroll', setActiveLink, { passive: true });
+  setActiveLink();
+
+  /* ------------------------------------------------------------------
+     3. DARK MODE TOGGLE (persists for the session via a JS variable;
+        localStorage avoided intentionally for artifact-safe portability
+        — on a real GitHub Pages deployment you may re-enable localStorage)
+     ------------------------------------------------------------------ */
+  const themeToggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+  let storedTheme = null;
+  try { storedTheme = localStorage.getItem('faculty-site-theme'); } catch (e) { /* storage unavailable */ }
+  if (storedTheme === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+    if (themeToggle) themeToggle.textContent = '☀️';
+  }
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        themeToggle.textContent = '🌙';
+        try { localStorage.setItem('faculty-site-theme', 'light'); } catch (e) {}
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '☀️';
+        try { localStorage.setItem('faculty-site-theme', 'dark'); } catch (e) {}
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     4. TYPING EFFECT (hero)
+     ------------------------------------------------------------------ */
+  const typingEl = document.getElementById('typing-text');
+  const typingWords = [
+    'Artificial Intelligence',
+    'Machine Learning',
+    'Deep Learning',
+    'Natural Language Processing',
+    'Generative AI'
+  ];
+  if (typingEl) {
+    let wordIndex = 0, charIndex = 0, deleting = false;
+    const type = () => {
+      const word = typingWords[wordIndex];
+      if (!deleting) {
+        charIndex++;
+        typingEl.textContent = word.slice(0, charIndex);
+        if (charIndex === word.length) {
+          deleting = true;
+          setTimeout(type, 1400);
+          return;
+        }
+      } else {
+        charIndex--;
+        typingEl.textContent = word.slice(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % typingWords.length;
+        }
+      }
+      setTimeout(type, deleting ? 45 : 85);
+    };
+    type();
+  }
+
+  /* ------------------------------------------------------------------
+     5. SCROLL REVEAL (IntersectionObserver)
+     ------------------------------------------------------------------ */
+  const revealEls = document.querySelectorAll('.reveal, .timeline-item');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('revealed'));
+  }
+
+  /* ------------------------------------------------------------------
+     6. ANIMATED COUNTERS (stats section)
+     ------------------------------------------------------------------ */
+  const counters = document.querySelectorAll('.stat-number[data-count]');
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    const duration = 1400;
+    const startTime = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString() + (el.getAttribute('data-suffix') || '');
+    };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window && counters.length) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          cio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => cio.observe(c));
+  }
+
+  /* ------------------------------------------------------------------
+     7. BACK TO TOP BUTTON
+     ------------------------------------------------------------------ */
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 480);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     8. PUBLICATIONS: SEARCH + FILTER
+     ------------------------------------------------------------------ */
+  const pubSearch = document.getElementById('pub-search');
+  const pubChips = document.querySelectorAll('.filter-chip[data-pub-filter]');
+  const pubCards = document.querySelectorAll('.pub-card');
+  const pubEmpty = document.getElementById('pub-empty');
+  let activePubFilter = 'all';
+
+  const applyPubFilters = () => {
+    const query = (pubSearch ? pubSearch.value : '').trim().toLowerCase();
+    let visibleCount = 0;
+    pubCards.forEach(card => {
+      const type = card.getAttribute('data-type');
+      const text = card.textContent.toLowerCase();
+      const matchesFilter = activePubFilter === 'all' || type === activePubFilter;
+      const matchesSearch = !query || text.includes(query);
+      const show = matchesFilter && matchesSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    if (pubEmpty) pubEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+  };
+
+  pubChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      pubChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activePubFilter = chip.getAttribute('data-pub-filter');
+      applyPubFilters();
+    });
+  });
+  if (pubSearch) pubSearch.addEventListener('input', applyPubFilters);
+
+  /* Copy BibTeX to clipboard */
+  document.querySelectorAll('.copy-bibtex').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bibtex = btn.getAttribute('data-bibtex') || '';
+      navigator.clipboard?.writeText(bibtex).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 1500);
+      }).catch(() => { alert('Copy this BibTeX:\n\n' + bibtex); });
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     9. TEACHING TABS (Current / Previous)
+     ------------------------------------------------------------------ */
+  const teachingTabs = document.querySelectorAll('.teaching-tab');
+  const teachingPanels = document.querySelectorAll('.teaching-panel');
+  teachingTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      teachingTabs.forEach(t => t.classList.remove('active'));
+      teachingPanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-panel')).classList.add('active');
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     10. STUDENT TABS (PhD / MTech / BTech)
+     ------------------------------------------------------------------ */
+  const studentTabs = document.querySelectorAll('.student-tab');
+  const studentGrids = document.querySelectorAll('.student-grid');
+  studentTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      studentTabs.forEach(t => t.classList.remove('active'));
+      studentGrids.forEach(g => g.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-panel')).classList.add('active');
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     11. GALLERY FILTER + LIGHTBOX
+     ------------------------------------------------------------------ */
+  const galleryChips = document.querySelectorAll('.filter-chip[data-gallery-filter]');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  galleryChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      galleryChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.getAttribute('data-gallery-filter');
+      galleryItems.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      if (!lightbox || !img) return;
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = img.alt || '';
+      lightbox.classList.add('open');
+    });
+  });
+  if (lightboxClose) lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('open');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     12. CONTACT FORM (frontend only — no backend)
+     ------------------------------------------------------------------ */
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = contactForm.querySelector('#cf-name').value.trim();
+      const email = contactForm.querySelector('#cf-email').value.trim();
+      const message = contactForm.querySelector('#cf-message').value.trim();
+      if (!name || !email || !message) {
+        formStatus.textContent = 'Please fill in every field before sending.';
+        formStatus.classList.remove('success');
+        return;
+      }
+      /* NOTE: This form has no backend. To make it functional, connect it
+         to a service such as Formspree, Getform, or EmailJS, and replace
+         this block with the corresponding submit call. */
+      formStatus.textContent = `Thanks, ${name}! This is a demo form — connect it to Formspree/EmailJS to receive messages.`;
+      formStatus.classList.add('success');
+      contactForm.reset();
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     13. VISITOR COUNTER PLACEHOLDER
+     ------------------------------------------------------------------ */
+  const visitorCountEl = document.getElementById('visitor-count');
+  if (visitorCountEl) {
+    /* Replace with a real counter service (e.g. goatcounter.com,
+       visitor-badge.laobi.icu) for a live count on GitHub Pages. */
+    let count = 0;
+    try {
+      count = parseInt(localStorage.getItem('faculty-site-visits') || '0', 10) + 1;
+      localStorage.setItem('faculty-site-visits', String(count));
+    } catch (e) { count = '—'; }
+    visitorCountEl.textContent = count;
+  }
+
+});
+
+</script>
+</body>
+</html>
